@@ -25,7 +25,7 @@ SECRET_KEY = '5db(r8=*oul7x1%kw_9i6$&fhux&=u8-_lc081k3h3y1e+a&ed'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'MiddleWare.App.mymiddleware.AppMiddleware',
+
 ]
 
 ROOT_URLCONF = 'MyNetEasyKaoLa.urls'
@@ -127,3 +129,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 黑名单
+BLOCKED_IPS = [
+    '10.20.154.2',
+    '10.20.154.3',
+    '10.20.154.36'
+]
+
+# 上传目录
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static.upload')

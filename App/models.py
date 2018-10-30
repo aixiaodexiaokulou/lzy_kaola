@@ -7,3 +7,7 @@ class User(models.Model):
     tel = models.CharField(max_length=20,unique=True)
     # 令牌: 唯一标识
     token = models.CharField(max_length=256, default='')
+
+# 轮播图
+class SildePic(models.Model):
+    img_src = models.CharField(max_length=1000)
