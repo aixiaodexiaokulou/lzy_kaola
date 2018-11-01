@@ -760,7 +760,6 @@ ul {
 }
 
 /*=====================网易考拉indexPage================*/
-
 .main-Wrap {
     width: 100%;
     overflow: hidden;
@@ -768,7 +767,7 @@ ul {
     position: relative;
 }
 
-.main-Wrap .m-bannerBox {
+.main-Wrap .swiper-container {
     height: 20.05rem;
     width: 1090px;
     margin: 0 auto;
@@ -776,7 +775,7 @@ ul {
     overflow: hidden;
 }
 
-.main-Wrap .m-bannerBox ul:first-child {
+.main-Wrap .swiper-container ul:first-child {
     margin: 0;
     padding: 0;
     width: 1920px;
@@ -787,18 +786,18 @@ ul {
     transform: translateX(-50%);
 }
 
-.main-Wrap .m-bannerBox ul:first-child li {
+.main-Wrap .swiper-container ul:first-child li {
     position: absolute;
     left: 0;
     top: 0;
 }
 
-.main-Wrap .m-bannerBox ul:first-child li img {
+.main-Wrap .swiper-container ul:first-child li img {
     height: 20rem;
     width: 96rem;
 }
 
-.main-Wrap .m-bannerBox .prevArrow, .main-Wrap .m-bannerBox .nextArrow {
+.main-Wrap .swiper-container .prevArrow, .main-Wrap .m-bannerBox .nextArrow {
     width: 30px;
     height: 80px;
     text-align: center;
@@ -808,58 +807,21 @@ ul {
     margin-top: 180px;
 }
 
-.main-Wrap .m-bannerBox .prevArrow:hover, .main-Wrap .m-bannerBox .nextArrow:hover {
+.main-Wrap .swiper-container .prevArrow:hover, .main-Wrap .m-bannerBox .nextArrow:hover {
     cursor: pointer;
     opacity: .6;
 }
 
-.main-Wrap .m-bannerBox .prevArrow {
+.main-Wrap .swiper-container .prevArrow {
     float: left;
     margin-left: 310px;
 }
 
-.main-Wrap .m-bannerBox .nextArrow {
+.main-Wrap .swiper-container .nextArrow {
     float: right;
     margin-right: 800px;
 }
 
-/*自己的轮播==========================================*/
-
-/*#slide1 {*/
-    /*!*margin: 0;*!*/
-    /*!*padding: 0;*!*/
-    /*list-style: none;*/
-    /*width: 7630px;*/
-    /*height: 100%;*/
-    /*position: relative;*/
-/*}*/
-
-/*#slide1 li {*/
-    /*width: 1090px;*/
-    /*height: 100%;*/
-    /*float: left;*/
-/*}*/
-
-/*.m-bannerBox ol {*/
-    /*list-style-type: none;*/
-    /*position: absolute;*/
-    /*right: 10px;*/
-    /*bottom: 10px;*/
-/*}*/
-
-/*.m-bannerBox ol li {*/
-    /*width: 10px;*/
-    /*height: 10px;*/
-    /*border-radius: 50%;*/
-    /*border: 2px solid white;*/
-    /*float: left;*/
-    /*margin-left: 5px;*/
-/*}*/
-/*.active1*/
-/*{*/
-    /*background: white;*/
-/*}*/
-/*自己的轮播==========================================*/
 .main-Wrap .m-sellpoint {
     width: 100%;
     border-bottom: .1rem solid #e2e2e2;
@@ -1733,4 +1695,35 @@ ul {
     padding: .2rem;
     margin-bottom: .2rem;
     border: .05rem solid #d2d2d2;
+}
+
+/*轮播图*/
+
+.swiper-container {
+    /*height: 20.05rem;*/
+    /*width: 1090px;*/
+    /*margin: 0 auto;*/
+    /*width: 96rem;*/
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }

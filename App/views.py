@@ -14,30 +14,13 @@ def index(request):
     token = request.COOKIES.get('token')
     users = User.objects.filter(token=token)
 
-
-    # img_src1 = SildePic.objects.filter(id=1)
-    # img_src1 ='/static/' + img_src1.first().img_src
-    #
-    # img_src2 = SildePic.objects.filter(id=2)
-    # img_src2 = '/static/' + img_src2.first().img_src
-    # img_src3 = SildePic.objects.filter(id=3)
-    # img_src3 = '/static/' + img_src3.first().img_src
-    # img_src4 = SildePic.objects.filter(id=4)
-    # img_src4 = '/static/' + img_src4.first().img_src
-    # img_src5 = SildePic.objects.filter(id=5)
-    # img_src5 = '/static/' + img_src5.first().img_src
-    # img_src6 = SildePic.objects.filter(id=6)
-    # img_src6 = '/static/' + img_src6.first().img_src
-    # img_src7 = SildePic.objects.filter(id=7)
-    # img_src8 = '/static/' + img_src7.first().img_src
     img_srcs = SildePic.objects.all()
+
     if users.exists():
         user = users.first()
-        # return render(request, 'index.html', context={'username':user.username,'img_src1':img_src1,'img_src2':img_src2,'img_src3':img_src3,'img_src4':img_src4,'img_src5':img_src5,'img_src6':img_src6,'img_src7':img_src7})
         return render(request, 'index.html', context={'username':user.username,'img_srcs':img_srcs})
 
     else:
-        # return render(request, 'index.html', context={'img_src1':img_src1,'img_src2':img_src2,'img_src3':img_src3,'img_src4':img_src4,'img_src5':img_src5,'img_src6':img_src6,'img_src7':img_src7})
         return render(request, 'index.html', context={'img_srcs':img_srcs})
 
 
