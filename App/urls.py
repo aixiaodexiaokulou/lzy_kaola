@@ -8,6 +8,11 @@ urlpatterns = [
 
     # 注册
     url(r'^register/$', views.register, name='register'),
+    # 验证账号是否已被注册
+    url(r'^checkaccount/$', views.checkaccount, name='checkaccount'),
+    # 验证手机是否已被注册
+    url(r'^checktel/$', views.checktel, name='checktel'),
+
     # 登录
     url(r'^login/$', views.login, name='login'),
     # 退出登录

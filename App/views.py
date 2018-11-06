@@ -3,25 +3,26 @@ import random
 import time
 import uuid
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from App.models import User, SildePic
 
+
 # 主页
 def index(request):
-    token = request.COOKIES.get('token')
+    token = request.session.get('token')
     users = User.objects.filter(token=token)
 
     img_srcs = SildePic.objects.all()
 
     if users.exists():
         user = users.first()
-        return render(request, 'index.html', context={'username':user.username,'img_srcs':img_srcs})
+        return render(request, 'index.html', context={'account': user.account, 'img_srcs': img_srcs})
 
     else:
-        return render(request, 'index.html', context={'img_srcs':img_srcs})
+        return render(request, 'index.html', context={'img_srcs': img_srcs})
 
 
 # 生成token
@@ -30,6 +31,7 @@ def generate_token():
     md5 = hashlib.md5()
     md5.update(token.encode('utf-8'))
     return md5.hexdigest()
+
 
 # 加密
 def generate_password(password):
@@ -43,13 +45,13 @@ def register(request):
     if request.method == 'GET':
         return render(request, 'register.html')
     elif request.method == 'POST':
-        username = request.POST.get('username')
+        account = request.POST.get('account')
         password = request.POST.get('password')
         tel = request.POST.get('tel')
         # 存数据库
         try:
             user = User()
-            user.username = username
+            user.account = account
             # 密码加密
             user.password = generate_password(password)
             user.tel = tel
@@ -64,39 +66,74 @@ def register(request):
             return HttpResponse('注册失败')
 
 
-
 # 登录
 def login(request):
     if request.method == "GET":
         return render(request, 'login.html')
     elif request.method == "POST":
-        username = request.POST.get('username')
+        account = request.POST.get('account')
+        password = request.POST.get('password')
         # 验证
-        password = generate_password(request.POST.get('password'))
+        try:
+            user = User.objects.get(account=account)
+            if user.password == generate_password(password):  # 登录成功
 
-        users = User.objects.filter(username=username, password=password)
-        if users.exists():
-            user = users.first()
-            user.token = generate_token()
-            user.save()
-            response = redirect('app:index')
-            response.set_cookie('token', user.token)
-            return response
-        else:
-            return HttpResponse('用户名或密码错误')
+                # 更新token
+                user.token = str(uuid.uuid5(uuid.uuid4(), 'login'))
+                user.save()
+                request.session['token'] = user.token
+                return redirect('app:index')
+            else:  # 登录失败
+                return render(request, 'login.html', context={'passwdErr': '密码错误!'})
+        except:
+            return render(request, 'login.html', context={'acountErr': '账号不存在!'})
+
+
+# 账号验证
+def checkaccount(request):
+    account = request.GET.get('account')
+    print(account)
+    responseData = {
+        'msg': '账号可用',
+        'status': 1  # 1标识可用，-1标识不可用
+    }
+    try:
+        user = User.objects.get(account=account)
+        responseData['msg'] = '账号已被占用'
+        responseData['status'] = -1
+        return JsonResponse(responseData)
+    except:
+        return JsonResponse(responseData)
+
+
+# 手机号验证
+def checktel(request):
+    tel = request.GET.get('tel')
+    print(tel)
+    responseData = {
+        'msg': '手机号可用',
+        'status': 1  # 1标识可用，-1标识不可用
+    }
+    try:
+        user = User.objects.get(tel=tel)
+        responseData['msg'] = '手机账号已被占用'
+        responseData['status'] = -1
+        return JsonResponse(responseData)
+    except:
+        return JsonResponse(responseData)
+
 
 # 退出登录
 def loginout(request):
-    response = redirect('app:index')
+    request.session.flush()
+    return redirect('app:index')
 
-    response.delete_cookie('token')
-    return response
 
 # 详情页
 def goodDetail(request):
     return None
 
+
 # 购物车
 def goodShopCart(request):
     return None
-
