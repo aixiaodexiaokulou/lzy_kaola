@@ -11,3 +11,11 @@ class User(models.Model):
 # 轮播图
 class SildePic(models.Model):
     img_src = models.CharField(max_length=1000)
+
+
+class SmallSildePic(models.Model):
+    small_src = models.CharField(max_length=100)
+    name = models.CharField(max_length=1000)
+    discount_price = models.CharField(max_length=100)
+    orig_price = models.CharField(max_length=100)
+

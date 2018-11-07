@@ -1468,37 +1468,37 @@
     </div>
 </nav>
 <div class="main-Wrap">
-{#    <div class="m-bannerBox" id="topSwiper">#}
+    {#    <div class="m-bannerBox" id="topSwiper">#}
     <div class="swiper-container" id="topSwiper">
         {#    轮播图#}
         <div class="swiper-wrapper">
-                {% for img_src in img_srcs %}
-                    <div class="swiper-slide">
+            {% for img_src in img_srcs %}
+                <div class="swiper-slide">
                     <img src="{% static img_src.img_src %}" id="slide_img">
-                    </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
 
         </div>
 
-            <div class="swiper-pagination" ></div>
-            <div class="swiper-button-next" style="margin-right: 630px"></div>
-            <div class="swiper-button-prev" style="margin-left: 300px"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next" style="margin-right: 630px"></div>
+        <div class="swiper-button-prev" style="margin-left: 300px"></div>
     </div>
 
 
-    {#轮播2#}
-    {#    <section class="m-sellpoint clearfix">#}
-    {#        <div class="sellpoint-Wrap">#}
-    {#            <div class="sellpointL">#}
-    {#                <a href="javascript:"><i></i>100%正品</a>#}
-    {#                <a href="javascript:"><i></i>7天无忧退货</a>#}
-    {#                <a href="javascript:"><i></i>满88包邮（特殊商品除外）</a>#}
-    {#            </div>#}
-    {#            <div class="notice">#}
-    {#                <a href="javascript:"><i></i>国庆礼包390速抢</a>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </section>#}
+    {#    轮播2#}
+    <section class="m-sellpoint clearfix">
+        <div class="sellpoint-Wrap">
+            <div class="sellpointL">
+                <a href="javascript:"><i></i>100%正品</a>
+                <a href="javascript:"><i></i>7天无忧退货</a>
+                <a href="javascript:"><i></i>满88包邮（特殊商品除外）</a>
+            </div>
+            <div class="notice">
+                <a href="javascript:"><i></i>国庆礼包390速抢</a>
+            </div>
+        </div>
+    </section>
     <section class="m-promotions">
         <ul>
             <li><a href="javascript:"><img src="{% static 'img/itfp4mux10_265_220.jpg' %}" alt=""></a></li>
@@ -1760,46 +1760,50 @@
                     <h2>最新热卖</h2>
                     <div class="prolist">
                         <div class="itemgroup">
-                            <div class="item-hot-sale">
-                                <a href="javascript:"><img src="{% static '' %}" alt=""></a>
-                                <div class="item-info">
-                                    <div class="item-tit"></div>
-                                    <div class="price">
-                                        <span class="new-price hotkey"></span>
-                                        <del class="old-price"></del>
+                            {% for smallsildepic in smallsildepics %}
+                                <div class="item-hot-sale">
+                                    <a href="javascript:">
+                                        <img src="{% static smallsildepic.small_src %}" alt="">
+                                    </a>
+                                    <div class="item-info">
+                                        <div class="item-tit">{{ smallsildepic.name }}</div>
+                                        <div class="price">
+                                            <span class="new-price hotkey">{{ smallsildepic.discount_price }}</span>
+                                            <del class="old-price">{{ smallsildepic.orig_price }}</del>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item-hot-sale">
-                                <a href="javascript:"><img src="{% static '' %}" alt=""></a>
-                                <div class="item-info">
-                                    <div class="item-tit"></div>
-                                    <div class="price">
-                                        <span class="new-price hotkey"></span>
-                                        <del class="old-price"></del>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-hot-sale">
-                                <a href="javascript:"><img src="{% static '' %}" alt=""></a>
-                                <div class="item-info">
-                                    <div class="item-tit"></div>
-                                    <div class="price">
-                                        <span class="new-price hotkey"></span>
-                                        <del class="old-price"></del>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item-hot-sale">
-                                <a href="javascript:"><img src="{% static '' %}" alt=""></a>
-                                <div class="item-info">
-                                    <div class="item-tit"></div>
-                                    <div class="price">
-                                        <span class="new-price hotkey"></span>
-                                        <del class="old-price"></del>
-                                    </div>
-                                </div>
-                            </div>
+{#                                <div class="item-hot-sale">#}
+{#                                    <a href="javascript:"><img src="{% static '' %}" alt=""></a>#}
+{#                                    <div class="item-info">#}
+{#                                        <div class="item-tit"></div>#}
+{#                                        <div class="price">#}
+{#                                            <span class="new-price hotkey"></span>#}
+{#                                            <del class="old-price"></del>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="item-hot-sale">#}
+{#                                    <a href="javascript:"><img src="{% static '' %}" alt=""></a>#}
+{#                                    <div class="item-info">#}
+{#                                        <div class="item-tit"></div>#}
+{#                                        <div class="price">#}
+{#                                            <span class="new-price hotkey"></span>#}
+{#                                            <del class="old-price"></del>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="item-hot-sale">#}
+{#                                    <a href="javascript:"><img src="{% static '' %}" alt=""></a>#}
+{#                                    <div class="item-info">#}
+{#                                        <div class="item-tit"></div>#}
+{#                                        <div class="price">#}
+{#                                            <span class="new-price hotkey"></span>#}
+{#                                            <del class="old-price"></del>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+                            {% endfor %}
                         </div>
                         <div class="itemgroup">
                             <div class="item-hot-sale">

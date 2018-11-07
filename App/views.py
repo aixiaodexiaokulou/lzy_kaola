@@ -7,19 +7,24 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from App.models import User, SildePic
+from App.models import User, SildePic, SmallSildePic
 
 
 # 主页
 def index(request):
     token = request.session.get('token')
     users = User.objects.filter(token=token)
-
     img_srcs = SildePic.objects.all()
-
+    smallsildepics = SmallSildePic.objects.all()
     if users.exists():
         user = users.first()
-        return render(request, 'index.html', context={'account': user.account, 'img_srcs': img_srcs})
+        data = {
+            'account':user.account,
+            'img_srcs':img_srcs,
+            'smallsildepics': smallsildepics,
+
+        }
+        return render(request, 'index.html', context=data)
 
     else:
         return render(request, 'index.html', context={'img_srcs': img_srcs})
@@ -137,3 +142,4 @@ def goodDetail(request):
 # 购物车
 def goodShopCart(request):
     return None
+
