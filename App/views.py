@@ -15,19 +15,24 @@ def index(request):
     token = request.session.get('token')
     users = User.objects.filter(token=token)
     img_srcs = SildePic.objects.all()
-    smallsildepics = SmallSildePic.objects.all()
+    smallsildepics1 = SmallSildePic.objects.all()[0:4]
+    smallsildepics2 = SmallSildePic.objects.all()[4:8]
+    smallsildepics3 = SmallSildePic.objects.all()[8:12]
+
     if users.exists():
         user = users.first()
         data = {
             'account':user.account,
             'img_srcs':img_srcs,
-            'smallsildepics': smallsildepics,
+            'smallsildepics1': smallsildepics1,
+            'smallsildepics2': smallsildepics1,
+            'smallsildepics3': smallsildepics3,
 
         }
         return render(request, 'index.html', context=data)
 
     else:
-        return render(request, 'index.html', context={'img_srcs': img_srcs})
+        return render(request, 'index.html', context={'img_srcs': img_srcs,'smallsildepics1': smallsildepics1,'smallsildepics2': smallsildepics2,'smallsildepics3': smallsildepics3,})
 
 
 # 生成token

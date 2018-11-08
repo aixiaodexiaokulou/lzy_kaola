@@ -1402,6 +1402,60 @@ ul {
     box-sizing: border-box;
 }
 
+/*小轮播图*/
+.partr{
+    position: relative;
+}
+.prolist {
+    width: 223px;
+    height: 380px;
+}
+
+.ul1 {
+    width: 669px;
+    height: 380px;
+    position: absolute;
+}
+
+.ul1 li {
+    width: 223px;
+    float: left;
+}
+
+.itemgroup {
+    /*width: 669px;*/
+    float: left;
+}
+
+.prolist {
+
+    position: relative;
+}
+
+.ul2 {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+}
+
+.ul2 li {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid dimgrey;
+    float: left;
+    margin-left: 5px;
+}
+
+.active1 {
+    background: black;
+}
+
+/*小轮播图over*/
+
 .area .area-cont .partr .prolist {
     overflow: hidden;
 }

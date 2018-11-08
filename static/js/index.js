@@ -149,17 +149,17 @@ $(function(){
       // console.log(flag);
     }
     //小轮播
-    $('.partr>ul>li').mouseenter(function(event) {
-      let currentIndex = $(this).index();
-      console.log(currentIndex);
-      $(this).parent().prev().find('.itemgroup').eq(currentIndex).show().css('opacity',1);
-      $(this).parent().prev().find('.itemgroup').eq(currentIndex).siblings().hide().css('opacity',0);
-    });
+    // $('.partr>ul>li').mouseenter(function(event) {
+    //   let currentIndex = $(this).index();
+    //   console.log(currentIndex);
+    //   $(this).parent().prev().find('.itemgroup').eq(currentIndex).show().css('opacity',1);
+    //   $(this).parent().prev().find('.itemgroup').eq(currentIndex).siblings().hide().css('opacity',0);
+    // });
 
-    $('.itemgroup>.item-hot-sale').click(function(){
-      // console.log($(this).attr('id'));
-      location.href="http://localhost:3000/src/goodDetail.html?id"+$(this).attr('id');
-    })
+    // $('.itemgroup>.item-hot-sale').click(function(){
+    //   // console.log($(this).attr('id'));
+    //   location.href="http://localhost:3000/src/goodDetail.html?id"+$(this).attr('id');
+    // })
   })
   //首页轮播图
   //获取对应json
@@ -294,4 +294,90 @@ $(function () {
         autoplayDisableOnInteraction: false,
         loop: true,
     });
+})
+
+//小轮播图
+$(function () {
+
+    //复制第一个ul li,加到最ul li末尾
+    var $newLi = $(".ul1 li").first().clone()
+    $(".ul1").append($newLi)
+
+    //获取一个ul li的宽度
+    var liWidth = $newLi.width()
+
+    //修改整个ul的宽度
+    $(".ul1").width(liWidth * $(".ul1 li").length)
+
+    var count = 0
+
+    //定时器
+    var timer = setInterval(function () {
+        count++
+        move()
+    }, 2000)
+
+//鼠标放到div之上时,就要立刻停掉定时器
+    $(".partr").mouseenter(function () {
+        clearInterval(timer)
+    })
+    //离开div,定时器要继续
+    $(".partr").mouseleave(function () {
+        //这个timer要是全局变量,否则上面的函数是无法停掉的
+        timer = setInterval(function () {
+            count++
+            move()
+        }, 2000)
+    })
+
+    function move() {
+        //没有动画
+        //$("ul").css("left",-(count*liWidth)+"px")
+
+        if (count < 0) {
+            //不使用动画,将ul移动到最后一张图,即最后一张1的位置
+            $(".ul1").css("left", -liWidth * ($(".ul1 li").length - 1) + "px")
+            //再从最后这个1移动到前面的4
+            //从倒数第1张,移到倒数第2张
+            count = $(".ul1 li").length - 2
+        }
+
+
+        //到达最后一个
+        if (count >= $(".ul1 li").length) {
+            $(".ul1").css("left", "0")  //不使用动画归零
+            count = 1                //归零后的下一张,还是第二张图,但是1*liWidth整个偏移量就是第二张图
+        }
+
+        //动画中不用带像素
+        $(".ul1").animate({left: -count * liWidth})
+
+
+        if (count == $(".ul1 li").length - 1) {
+            //当滚动到最后一张图时,让第0个li元素高亮
+            $(".ul2 li")
+                .eq(0).addClass("active1")
+                .siblings().removeClass("active1")
+        } else {
+            //正常切
+            //小圆点的高亮效果和滚动的图片自动对应
+            //ul的li  和ol 的li    下标是对应的
+            $(".ul2 li")
+                .eq(count).addClass("active1")
+                .siblings().removeClass("active1")
+        }
+
+    }
+
+    //鼠标放到ol li上面,也能自动切图.
+    //如果从第4个,直接移到第一个,会出现多张图片滚动效果,所以这里不加动画
+    $(".ul2 li").mouseenter(function () {
+        //高亮
+        $(this).addClass("active1").siblings().removeClass("active1")
+
+        //切图
+        $(".ul1").animate({left:-$(this).index()*liWidth})
+    })
+
+
 })
