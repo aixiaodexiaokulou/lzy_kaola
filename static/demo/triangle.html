@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    body{display: flex;justify-content: center;
+         align-items: center;height: 600px;}
+    .checkin_content{width: 100px;
+        height: 40px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        position: relative;
+        z-index: 3;text-align: center;}
+    .checkin_content > .triangle_1{position: absolute;
+                     width: 10px;height: 10px;
+                     background-color: #fff;
+                     right: -4.5px;
+                     z-index: -1;
+                     top:50%;
+                     margin-top: -5px;
+                     transform: rotate(45deg);
+                     box-shadow: 0 0 0 1px #ccc;}
+    .checkin_content > .triangle_2{position: absolute;
+               width: 14.4px;height: 16.4px;
+               background-color: #fff;
+               right: 0;top: 50%;margin-top: -8.2px}
+    .checkin_content > .content{font-size: 12px;display: flex;
+                    height: 100%;
+                    justify-content: center;
+                    flex-direction: column;}
+  </style>
+</head>
+<body>
+
+
+  <div class="checkin_content">
+    <div class="triangle_1"></div>
+    <div class="triangle_2"></div>
+    <div class="content">
+      <span>每日签到</span><span>赢考拉豆</span>
+    </div>
+  </div>
+</body>
+</html>

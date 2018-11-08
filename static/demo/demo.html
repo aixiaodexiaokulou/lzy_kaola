@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .box{background-color: red;
+         width: 50px;
+         height: 50px;
+         position: absolute;
+         left: 100px;
+         top: 100px;}
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script src="../js/vendor/jquery-3.1.0.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  //如何抛物线？
+    setInterval(function(){
+      // $('.box').css({'left':$('.box').offset().left+6,'top':$('.box').offset().top+3})
+    },30);
+  </script>
+</body>
+</html>

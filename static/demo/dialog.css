@@ -1,0 +1,58 @@
+/**{margin: 0 ;padding: 0;}*/
+body{font-family: '微软雅黑'}
+button{outline: 0; border: none;}
+/*width 156px height 84px */
+/*      520px        280px*/
+/*.dialog-Component{display: none;}*/
+/*.dialog-container{width: 156px;height: 84px;}*/
+/*.dialog-container,.body-mask{display: none;}*/
+.abcenter{position: absolute;top: 50%;left: 50%; transform: translate(-50%,-50%);}
+.body-mask{position: fixed;width: 100%;height: 100%;
+           top: 0;left: 0;right: 0;bottom: 0;
+           background-color: rgba(0,0,0,.6);z-index: 1000;}
+.dialog-container{width: 520px;height: 280px;background-color: #fff;z-index: 1001;}
+.dialog-tit{height: 60px;width: 100%;display: flex;
+            align-items: center;text-align-last: right;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ccc;}
+.dialog-tit>.tit{padding-left: 20px;font-size: 22px;color: #999;}
+.dialog-tit>.btn-cls{display: inline-block;
+                     height: 30px;width: 30px;margin-right: 20px;
+                     background: url(../img/dialogClose.gif) no-repeat center center;
+                     cursor: pointer;}
+.dialog-content>.content-txt{padding: 30px;
+                 box-sizing: border-box;
+                 width: 100%;
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: center;
+                 align-items: center;}
+.dialog-content>.content-txt>.content-tit{display: flex;align-items: center;}
+.dialog-content>.content-txt>.content-tit>i{margin-right: 5px;
+                                          width: 20px;height: 20px;
+                                          border-radius: 50%;
+                                          background-color: #D22147;
+                                          display: flex;justify-content: center;
+                                          align-items:center;font-style: normal;
+                                          color: #fff;}
+.dialog-content>.content-txt>.content-tit>h2{font-weight: normal;font-size: 1rem;margin: 0;}
+.dialog-content>.content-txt>.content{margin-top: 15px;font-size: 14px;text-align: center;}
+.dialog-content>.content-button{width: 100%;
+                  padding: 0 30px ;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  }
+.dialog-content>.content-button>button{display: inline-block;
+                                width: 80px;height: 36px;
+                                box-sizing: border-box;
+                                /*margin-left: 10px;*/
+                                margin: 0 10px;
+                                font-size: 12px;
+                                font-family: '微软雅黑';
+                                cursor: pointer;}
+.content-button>.btn-confirm{background-color: #D22147;color: #fff;}
+.content-button>.btn-confirm:hover{background-color: #e31436;}
+.content-button>.btn-cancle{background-color: #fff;color: #333;border: 1px solid #ccc;}
+.content-button>.btn-cancle:hover{border: 1px solid #e31436;}

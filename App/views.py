@@ -141,7 +141,9 @@ def loginout(request):
 
 # 详情页
 def goodDetail(request):
-    return None
+
+
+    return render(request, 'goodDetail.html')
 
 
 # 购物车
