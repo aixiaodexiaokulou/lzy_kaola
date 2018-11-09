@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from App.models import User, SildePic, SmallSildePic
+from App.models import User, SildePic, SmallSildePic, Goods
 
 
 # 主页
@@ -119,7 +119,7 @@ def checkaccount(request):
 # 手机号验证
 def checktel(request):
     tel = request.GET.get('tel')
-    print(tel)
+    # print(tel)
     responseData = {
         'msg': '手机号可用',
         'status': 1  # 1标识可用，-1标识不可用
@@ -140,10 +140,17 @@ def loginout(request):
 
 
 # 详情页
-def goodDetail(request):
+def goods(request, id):
+    # goods = Goods.objects.all()[0:1]
+    # 根据ID获取对应商品数据
+    # id =
+    goods = Goods.objects.filter(id=id)
 
+    data = {
+        'goods':goods,
+    }
 
-    return render(request, 'goodDetail.html')
+    return render(request, 'goodDetail.html', context=data)
 
 
 # 购物车

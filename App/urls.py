@@ -19,7 +19,7 @@ urlpatterns = [
     url(r'^loginout/$', views.loginout, name='loginout'),
 
     # 详情页
-    url(r'^goodDetail/$', views.goodDetail, name='goodDetail'),
+    url(r'^goods/(\d+)/$', views.goods, name='goods'),
     # 购物车
     url(r'^goodShopCart/$', views.goodShopCart, name='goodShopCart'),
 

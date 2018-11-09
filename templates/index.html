@@ -1759,55 +1759,60 @@
                     <div class="prolist">
                         <ul class="ul1">
                             <li>{#                        小轮播图第一页需要前4条数据#}
-                        <div class="itemgroup">
-                            {% for item in smallsildepics1 %}
-                                <div class="item-hot-sale">
-                                    <a href="javascript:"><img src="{% static item.small_src %}" alt=""></a>
-                                    <div class=item-info>
-                                        <div class="item-tit">{{ item.name }}</div>
-                                        <div class="price">
-                                            <span class="new-price hotkey">{{ item.discount_price }}</span>
-                                            <del class="old-price">{{ item.orig_price }}</del>
+                                <div class="itemgroup">
+                                    {% for item in smallsildepics1 %}
+                                        <div class="item-hot-sale">
+                                            <a href="{% url 'app:goods' item.id %}">
+                                            <img  src="{% static item.small_src %}" alt="">
+                                            </a>
+                                            <div class=item-info>
+                                                <div class="item-tit">{{ item.name }}</div>
+                                                <div class="price">
+                                                    <span class="new-price hotkey">{{ item.discount_price }}</span>
+                                                    <del class="old-price">{{ item.orig_price }}</del>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
-                        </div></li>
+                            </li>
 
                             <li>
                                 {#                        小轮播图第二页需要4条数据#}
-                        <div class="itemgroup">
-                            {% for item in smallsildepics2 %}
-                                <div class="item-hot-sale">
-                                    <a href="javascript:"><img src="{% static item.small_src %}" alt=""></a>
-                                    <div class=item-info>
-                                        <div class="item-tit">{{ item.name }}</div>
-                                        <div class="price">
-                                            <span class="new-price hotkey">{{ item.discount_price }}</span>
-                                            <del class="old-price">{{ item.orig_price }}</del>
+                                <div class="itemgroup">
+                                    {% for item in smallsildepics2 %}
+                                        <div class="item-hot-sale">
+                                            <a href="{% url 'app:goods' item.id %}">
+                                                <img src="{% static item.small_src %}" alt="">
+                                            </a>
+                                            <div class=item-info>
+                                                <div class="item-tit">{{ item.name }}</div>
+                                                <div class="price">
+                                                    <span class="new-price hotkey">{{ item.discount_price }}</span>
+                                                    <del class="old-price">{{ item.orig_price }}</del>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
-                        </div>
                             </li>
 
                             <li>
                                 {#                        小轮播图第三页需要4条数据#}
-                        <div class="itemgroup">
-                            {% for item in smallsildepics3 %}
-                                <div class="item-hot-sale">
-                                    <a href="javascript:"><img src="{% static item.small_src %}" alt=""></a>
-                                    <div class=item-info>
-                                        <div class="item-tit">{{ item.name }}</div>
-                                        <div class="price">
-                                            <span class="new-price hotkey">{{ item.discount_price }}</span>
-                                            <del class="old-price">{{ item.orig_price }}</del>
+                                <div class="itemgroup">
+                                    {% for item in smallsildepics3 %}
+                                        <div class="item-hot-sale">
+                                            <a href="{% url 'app:goods' item.id %}"><img src="{% static item.small_src %}" alt=""></a>
+                                            <div class=item-info>
+                                                <div class="item-tit">{{ item.name }}</div>
+                                                <div class="price">
+                                                    <span class="new-price hotkey">{{ item.discount_price }}</span>
+                                                    <del class="old-price">{{ item.orig_price }}</del>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
-                            {% endfor %}
-                        </div>
                             </li>
                         </ul>
 
