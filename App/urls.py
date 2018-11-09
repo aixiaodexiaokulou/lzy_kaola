@@ -17,6 +17,10 @@ urlpatterns = [
     url(r'^login/$', views.login, name='login'),
     # 退出登录
     url(r'^loginout/$', views.loginout, name='loginout'),
+    # 退出详情页登录
+    url(r'^loginoutdetail/$', views.loginoutdetail, name='loginoutdetail'),
+    # 购物车页登录
+    url(r'^loginoutcart/$', views.loginoutcart, name='loginoutcart'),
 
     # 详情页
     url(r'^goods/(\d+)/$', views.goods, name='goods'),

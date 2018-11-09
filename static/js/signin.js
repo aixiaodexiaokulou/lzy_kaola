@@ -53,13 +53,13 @@ $(function () {
         var accountInput = $('#userName')
         if (reg.test(accountInput.val())) {  // 符合
             $('.usernameBox b').hide()
-            $('#userName').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
+            // $('#userName').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
 
             return true
 
         } else {    // 不符合
             $('.usernameBox b').show()
-            $('#userName').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
+            // $('#userName').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
             $('.usernameBox b').css('color', 'red')
 
             return false
@@ -72,11 +72,11 @@ $(function () {
         var passwordInput = $('#userPass')
         if (reg.test(passwordInput.val())) {  // 符合
             $('.userpassBox b').hide()
-            $('#userPass').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
+            // $('#userPass').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
             return true
         } else {    // 不符合
             $('.userpassBox b').show()
-            $('#userPass').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
+            // $('#userPass').removeClass('errorBorder').css('border', '1px solid rgb(15, 157, 85)')
             $('.userpassBox b').css('color', 'red')
 
             return false

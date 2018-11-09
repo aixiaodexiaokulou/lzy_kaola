@@ -42,7 +42,7 @@ $(function(){
                   $('.orig-country>.country').html('日本')
                   break;
                 case 'China':
-                  $('.orig-country>img').attr('src', '../src/img/flag/China-flag.png');
+                  $('.orig-country>img').attr('src', 'static/img/flag/China-flag.png');
                   $('.country').html('中国')
                   break;
                 case 'Taiwan':

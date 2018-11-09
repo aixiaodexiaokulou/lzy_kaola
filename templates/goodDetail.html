@@ -16,9 +16,15 @@
 <nav class="hd-NavTop">
     <div class="hd-NavTopL1">
         考拉欢迎你！
-        <a href="/login/">登陆</a>
+        {% if account %}
+            {{ account }}
+            <span>|</span>
+            <a href="/loginoutdetail/">退出登录</a>
+        {% else %}
+            <a href="/login/">还未登录 现在登录</a>
+        {% endif %}
         <span>|</span>
-        <a href="/register/" target="_blank">免费注册</a>
+        <a href="/register/">免费注册</a>
     </div>
     <div class="hd-NavTopL2">
         <a href="http://app.kaola.com">
@@ -93,10 +99,11 @@
                 <li><a href="#">男包</a></li>
             </ul>
         </div>
-        <div class="hd-shopCart">
-            <i class="icon icon-shopCart-btn"></i>
-            <a href="http://localhost:3000/src/goodShopCart.html">购物车</a>
-        </div>
+        <a href="/goodShopCart/">
+            <div class="hd-shopCart">
+                <i class="icon icon-shopCart-btn"></i>购物车
+            </div>
+        </a>
     </div>
 </header>
 <nav class="hd-NavTab">
@@ -126,18 +133,18 @@
 <div class="m-box">
     <div class="m-wrap">
         <div class="m-goods">
-{#            商品顶部导航#}
+            {#            商品顶部导航#}
             <div class="m-goods-nav goods-detail-bread-crumbs-nav">
                 <em id="NEkaolaName"><a href="index.html">网易考拉海购</a></em>
                 <span class="right-arrow">&gt;</span>
                 <em id="thisGoodsName" class=""></em>
             </div>
-{#            商品详情#}
+            {#            商品详情#}
             <div class="m-goods-content">
                 {% for good in goods %}
 
-{#            商品图片部分#}
-                <figure class="goods-pic">
+                    {#            商品图片部分#}
+                    <figure class="goods-pic">
                         <div class="goods-bigpic" style="position:relative;">
                             <div id="mouseArea"
                                  style="cursor:crosshair;display:none;width:80px;height:80px;position:absolute;background-color:rgba(200, 255, 200, 0.298039)"></div>
@@ -169,9 +176,9 @@
                             </ul>
                             <span class="next-pic">&gt;</span>
                         </div>
-                </figure>
+                    </figure>
 
-{#            商品描述部分详情#}
+                    {#            商品描述部分详情#}
                     <article class="goods-txt">
                         {#                    自营 国家#}
                         <div class="orig-country">
@@ -194,36 +201,36 @@
                         </div>
 
                         {#                    价格#}
-                    <div class="goods-price">
-                        <div class="current-price">
-                            <span class="tit-3">售价</span>
-                            <em class="hotkey"><span>
+                        <div class="goods-price">
+                            <div class="current-price">
+                                <span class="tit-3">售价</span>
+                                <em class="hotkey"><span>
                                 {{ good.discount_price }}
                             </span></em>
+                            </div>
+                            <div class="active-promotions outline">
+                                <span class="tit-3">促销</span>
+                                <span class="active">{{ good.active_name }}</span>
+                                <span class="active-des">{{ good.active_content }}</span>
+                            </div>
                         </div>
-                        <div class="active-promotions outline">
-                            <span class="tit-3">促销</span>
-                            <span class="active">{{ good.active_name }}</span>
-                            <span class="active-des">{{ good.active_content }}</span>
-                        </div>
-                    </div>
 
-{#                    运费 不填#}
-                    <div class="postage outline">
-                        <span class="tit-3">运费</span>
-                        <span class="start-location">杭州</span>
-                        <span>至</span>
-                        <span class="end-location">
+                        {#                    运费 不填#}
+                        <div class="postage outline">
+                            <span class="tit-3">运费</span>
+                            <span class="start-location">杭州</span>
+                            <span>至</span>
+                            <span class="end-location">
                 <select id="s_province" name="s_province"></select>  
                   <select id="s_city" name="s_city"></select>  
                   <select id="s_county" name="s_county"></select>
-                            <!-- 导入js -->
-                            <!-- <script src="js/jquery-1.12.3.js"></script> -->
+                                <!-- 导入js -->
+                                <!-- <script src="js/jquery-1.12.3.js"></script> -->
                   <script class="resources library" src="{% static 'js/plug-in/area.js' %}"
                           type="text/javascript"></script>
                   <script type="text/javascript">_init_area();</script>
               </span>
-                        <span class="free-post">
+                            <span class="free-post">
                 <span>订单实付满88元免运费</span><i class="icon-triangle"></i>
                 <div class="rule-free-post" style="display:none">
                   自营实付满88元免运费，不足金额的订单收取10元运费，<br>
@@ -231,19 +238,19 @@
                   部分特殊商品及入驻商家单独计算运费。
                 </div>
               </span>
-                    </div>
+                        </div>
 
-{#                    服务 不填#}
-                    <div class="service outline">
-                        <span class="tit-3">服务</span>
-                        <span>本商品由<em>自营杭州保税5号仓</em>发货</span>
-                    </div>
+                        {#                    服务 不填#}
+                        <div class="service outline">
+                            <span class="tit-3">服务</span>
+                            <span>本商品由<em>自营杭州保税5号仓</em>发货</span>
+                        </div>
 
-{#                    税率#}
-                    <div class="taxrate">
-                        <span class="tit-3">税费</span>
-                        <span class="current-taxrate">{{ good.tax }}</span>
-                        <span class="rule-tax">
+                        {#                    税率#}
+                        <div class="taxrate">
+                            <span class="tit-3">税费</span>
+                            <span class="current-taxrate">{{ good.tax }}</span>
+                            <span class="rule-tax">
                 <span>税费收取规则</span>
                 <i></i>
                 <div class="rule-tax-txt" style="display:none">
@@ -252,28 +259,28 @@
                   注：不同商品的适用税率不同，<a href="javascript:">了解税率</a>
                 </div>
               </span>
-                    </div>
-
-{#                    购买数量 库存#}
-                    <div class="change-num outline" id="btnChangeNum">
-                        <span class="tit-3">数量</span>
-                        <div class="computed-component">
-                            <button class="decrease-num default-button">-</button>
-                            <input type="text" class="current-goods-num" value="1">
-                            <button class="increase-num">+</button>
                         </div>
-                        <span class="stock">库存充足</span>
-                    </div>
 
-{#                    立即购买 加入购物车 收藏#}
-                    <div class="buyButton outline" id="btnBuyBox">
-                        <button id="btnBuy">立即购买</button>
-                        <button id="btnAddCart"><i></i>加入购物车</button>
-                        <button id="btnCollect"><i class="icon icon-heart-o"></i>收藏</button>
-                    </div>
+                        {#                    购买数量 库存#}
+                        <div class="change-num outline" id="btnChangeNum">
+                            <span class="tit-3">数量</span>
+                            <div class="computed-component">
+                                <button class="decrease-num default-button">-</button>
+                                <input type="text" class="current-goods-num" value="1">
+                                <button class="increase-num">+</button>
+                            </div>
+                            <span class="stock">库存充足</span>
+                        </div>
 
-{#                    五星评价率 评价数量 晒单数量#}
-                    <div class="scoreBox outline">
+                        {#                    立即购买 加入购物车 收藏#}
+                        <div class="buyButton outline" id="btnBuyBox">
+                            <button id="btnBuy">立即购买</button>
+                            <button id="btnAddCart"><i></i>加入购物车</button>
+                            <button id="btnCollect"><i class="icon icon-heart-o"></i>收藏</button>
+                        </div>
+
+                        {#                    五星评价率 评价数量 晒单数量#}
+                        <div class="scoreBox outline">
               <span class="favorable-star">
                 <i class="icon icon-star"></i>
                 <i class="icon icon-star"></i>
@@ -281,52 +288,50 @@
                 <i class="icon icon-star"></i>
                 <i class="icon icon-star"></i>
               </span>
-                        <span class="favorable-rate hotkey">98%</span>
-                        <span class="user-comment"><a href="">1300人</a><span>评价</span></span>
-                        <span class="user-share"><a href="">62人</a>晒单</span>
-                    </div>
+                            <span class="favorable-rate hotkey">98%</span>
+                            <span class="user-comment"><a href="">1300人</a><span>评价</span></span>
+                            <span class="user-share"><a href="">62人</a>晒单</span>
+                        </div>
 
-                    <!-- <div class="user-comment outline">
-                      just a box
-                    </div> -->
-                    <!-- 下架标识 -->
-                    <div class="outline-show"
-                         style="width:658px;height:82px;margin-top:16px;background:url({% static 'img/xiajia_e0c184e.jpg' %}) no-repeat;display:none;"></div>
+                        <!-- <div class="user-comment outline">
+                          just a box
+                        </div> -->
+                        <!-- 下架标识 -->
+                        <div class="outline-show"
+                             style="width:658px;height:82px;margin-top:16px;background:url({% static 'img/xiajia_e0c184e.jpg' %}) no-repeat;display:none;"></div>
 
-                </article>
+                    </article>
 
-
-{#                商品右侧导航栏#}
-                <aside class="goods-right-nav aside-right">
-                    <div>
-                        <i class="icon icon-flag-aside indexRight_checkin"></i>签到
-                        <div class="checkin_content">
-                            <div class="triangle_1"></div>
-                            <div class="triangle_2"></div>
-                            <div class="content">
-                                <span>每日签到</span><span>赢考拉豆</span>
+                    {#                商品右侧导航栏#}
+                    <aside class="goods-right-nav aside-right">
+                        <div>
+                            <i class="icon icon-flag-aside indexRight_checkin"></i>签到
+                            <div class="checkin_content">
+                                <div class="triangle_1"></div>
+                                <div class="triangle_2"></div>
+                                <div class="content">
+                                    <span>每日签到</span><span>赢考拉豆</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div style="position:relative">
-                        <a href="http://localhost:3000/src/goodShopCart.html"
-                           style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
-                            <i class="icon icon-shopcart-aside indexRight_cart "></i>
-                            购物车
-                            <em class="cart-goods-num" id="btnShowCartNum" style="display:none"></em>
-                        </a>
-                    </div>
-                    <div>
-                        <i class="icon icon-mobile-aside indexRight_app "></i>APP
-                        <div class="appQRcode"></div>
-                    </div>
-                    <div><i class="indexRight_triangle"></i>TOP</div>
-                </aside>
+                        <div style="position:relative">
+                            <a href="/goodShopCart/"
+                               style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center">
+                                <i class="icon icon-shopcart-aside indexRight_cart "></i>
+                                购物车
+                                <em class="cart-goods-num" id="btnShowCartNum" style="display:none"></em>
+                            </a>
+                        </div>
+                        <div>
+                            <i class="icon icon-mobile-aside indexRight_app "></i>APP
+                            <div class="appQRcode"></div>
+                        </div>
+                        <div><i class="indexRight_triangle"></i>TOP</div>
+                    </aside>
 
                 {% endfor %}
             </div>
         </div>
-
 
         <div class="m-recommend">
             <div class="tit">
@@ -363,7 +368,7 @@
                             </p>
                         </div>
                     </div>
-                    <figure class="detail-picBox" >
+                    <figure class="detail-picBox">
                         <img src="{% static 'detail1.jpg' %}" alt="" class="broken-img-alt">
                         <img src="{% static 'detail2.jpg' %}" alt="" class="broken-img-alt">
                         <img src="{% static 'detail3.jpg' %}" alt="" class="broken-img-alt">

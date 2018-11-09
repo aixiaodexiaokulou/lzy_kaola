@@ -22,17 +22,19 @@ def index(request):
     if users.exists():
         user = users.first()
         data = {
-            'account':user.account,
-            'img_srcs':img_srcs,
+            'account': user.account,
+            'img_srcs': img_srcs,
             'smallsildepics1': smallsildepics1,
-            'smallsildepics2': smallsildepics1,
+            'smallsildepics2': smallsildepics2,
             'smallsildepics3': smallsildepics3,
 
         }
         return render(request, 'index.html', context=data)
 
     else:
-        return render(request, 'index.html', context={'img_srcs': img_srcs,'smallsildepics1': smallsildepics1,'smallsildepics2': smallsildepics2,'smallsildepics3': smallsildepics3,})
+        return render(request, 'index.html', context={'img_srcs': img_srcs, 'smallsildepics1': smallsildepics1,
+                                                      'smallsildepics2': smallsildepics2,
+                                                      'smallsildepics3': smallsildepics3, })
 
 
 # 生成token
@@ -137,23 +139,47 @@ def checktel(request):
 def loginout(request):
     request.session.flush()
     return redirect('app:index')
+#
+def loginoutdetail(request):
+    request.session.flush()
+    return redirect('app:index')
 
+def loginoutcart(request):
+    request.session.flush()
+    return redirect('app:index')
 
 # 详情页
 def goods(request, id):
     # goods = Goods.objects.all()[0:1]
     # 根据ID获取对应商品数据
-    # id =
+    token = request.session.get('token')
+    users = User.objects.filter(token=token)
     goods = Goods.objects.filter(id=id)
 
-    data = {
-        'goods':goods,
-    }
 
-    return render(request, 'goodDetail.html', context=data)
+    if users.exists():
+        user = users.first()
+        data = {
+            'account': user.account,
+            'goods': goods,
+        }
+        return render(request, 'goodDetail.html', context=data)
+
+    else:
+        return render(request, 'goodDetail.html')
 
 
 # 购物车
 def goodShopCart(request):
-    return None
+    token = request.session.get('token')
+    users = User.objects.filter(token=token)
 
+    if users.exists():
+        user = users.first()
+        data = {
+            'account': user.account,
+        }
+        return render(request, 'goodShopCart.html', context=data)
+
+    else:
+        return render(request, 'goodShopCart.html')

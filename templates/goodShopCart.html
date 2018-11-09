@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,24 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>网易考拉海淘-购物车</title>
-  <link rel="stylesheet" href="css/index.css" media="screen" title="no title">
-  <link rel="stylesheet" href="css/goodShopCart.css" media="screen" title="no title">
-  <link rel="stylesheet" href="demo/dialog.css" media="screen" title="no title">
-  <link rel ="Shortcut Icon" href=favicon.ico>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" media="screen" title="no title">
+  <link rel="stylesheet" href="{% static 'css/goodShopCart.css' %}" media="screen" title="no title">
+  <link rel="stylesheet" href="{% static 'demo/dialog.css' %}" media="screen" title="no title">
+  <link rel ="Shortcut Icon" href={% static favicon.ico %}>
 </head>
 <body>
   <nav class="hd-NavTop">
-    <div class="hd-NavTopL1">
-      考拉欢迎你！
-      <a href="signin.html">登陆</a>
-      <span>|</span>
-      <a href="login.html" target="_blank">免费注册</a>
+   <div class="hd-NavTopL1">
+        考拉欢迎你！
+        {% if account %}
+            {{ account }}
+            <span>|</span>
+            <a href="/loginoutcart/">退出登录</a>
+        {% else %}
+            <a href="/login/">还未登录 现在登录</a>
+        {% endif %}
+        <span>|</span>
+        <a href="/register/">免费注册</a>
     </div>
     <div class="hd-NavTopL2">
       <a href="http://app.kaola.com">
         <i></i>手机考拉海淘
         <span>
-          <img src="img/2dcode-app3.jpg" title="APP QR Code" width="116px" height="116px">
+          <img src="{% static 'img/2dcode-app3.jpg' %}" title="APP QR Code" width="116px" height="116px">
           <strong>下载APP<br>领1000元新人礼包</strong>
           <span class="arrowToTop1"></span>
           <span class="arrowToTop2"></span>
@@ -71,7 +78,7 @@
   <div class="hd-NavBg"></div>
   <header class="hd-index" style="padding: 20px 0 ;">
     <div class="hd-index-wrap clearfix">
-      <div class="hd-kaolaLogo"><img src="img/kaolaLogo.png" alt="网易考拉海淘"></div>
+      <div class="hd-kaolaLogo"><img src="{% static 'img/kaolaLogo.png' %}" alt="网易考拉海淘"></div>
       <div class="hd-step">
         <div class="step-img"></div>
         <ul class="step-txt">
@@ -85,10 +92,10 @@
   <div class="m-cart">
     <div class="m-cart-wrap">
       <div class="cart-empty" >
-        <img src="img/cartIcon.jpg" alt="">
+        <img src="{% static 'img/cartIcon.jpg' %}" alt="">
         <div class="empty-txt">
-          <span>购物车空空如也，赶紧去<a href="http://localhost:3000/src/index.html">逛逛吧</a></span>
-          <span>或者您可以先进行<a href="http://localhost:3000/src/signin.html">登录</a></span>
+          <span>购物车空空如也，赶紧去<a href="{% url 'app:index' %}">逛逛吧</a></span>
+          <span>或者您可以先进行<a href="/login/">登录</a></span>
         </div>
       </div>
       <div class="cart-exist" style="display:none">
@@ -229,7 +236,7 @@
             <ul class="guess-goods ul-flex">
               <li>
                 <figure>
-                  <img src="img/onlineic709q9810309.jpg" alt="" width="204px" height="204px">
+                  <img src="{% static 'img/onlineic709q9810309.jpg' %}" alt="" width="204px" height="204px">
                   <figcaption>
                     <p class="goods-info text-hide">
                       <span class="goods-standard notice-keyword">X件装</span>
@@ -280,7 +287,7 @@
             <ul class="allbuy-goods ul-flex">
               <li>
                 <figure>
-                  <img src="img/onlinei8bp70f410066(1).jpg" alt="" width="204px" height="204px">
+                  <img src="{% static 'img/onlinei8bp70f410066(1).jpg' %}" alt="" width="204px" height="204px">
                   <figcaption>
                     <p class="allbuy-goods-info">
                       <span class="allbuy-goods-name">商品名称商品名称商品名称商品名称商品名称商品名称</span></p>
@@ -338,21 +345,21 @@
         <a href="#">网易考拉海购</a>
       </div>
       <div class="aboutinfo2">
-        <i><img src="img/f28aa8ee818a42bf832341f605eccefb.png" alt="Police sysmbol of China"></i>
+        <i><img src="{% static 'img/f28aa8ee818a42bf832341f605eccefb.png' %}" alt="Police sysmbol of China"></i>
         <a href="#">浙公网安备 33010002000066号</a>
         <span >增值电信业务经营许可证 ：浙B2-20090185-3</span>
         <span >网络文化经营许可证 ：浙网文[2016]0155-055号</span>
         <span >网易公司版权所有<em>&copy;</em>1997-2016</span>
       </div>
       <div class="aboutinfo3">
-        <img src="img/d720d83b55a04b6f932ea845c673c5bf.png" alt="Trusted website in China">
-        <img src="img/db9ba5060e9e49fabf3f6cc4b8b6ccf7.jpg" alt="National Emblem of the People's Republic of China">
+        <img src="{% static 'img/d720d83b55a04b6f932ea845c673c5bf.png' %}" alt="Trusted website in China">
+        <img src="{% static 'img/db9ba5060e9e49fabf3f6cc4b8b6ccf7.jpg' %}" alt="National Emblem of the People's Republic of China">
       </div>
     </div>
   </footer>
-  <script src="js/vendor/jquery-3.1.0.min.js" charset="utf-8"></script>
-  <script src="js/vendor/jquery.cookie.js" charset="utf-8"></script>
-  <script src="js/goodShopCart.js" charset="utf-8"></script>
+  <script src="{% static 'js/vendor/jquery.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/vendor/jquery.cookie.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/goodShopCart.js' %}" charset="utf-8"></script>
 
 </body>
 </html>

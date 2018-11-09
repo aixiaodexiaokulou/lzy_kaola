@@ -30,7 +30,7 @@
             <span>|</span>
             <a href="/loginout/">退出登录</a>
         {% else %}
-            还未登录<a href="/login/">登录</a>
+            <a href="/login/">还未登录 现在登录</a>
         {% endif %}
         <span>|</span>
         <a href="/register/">免费注册</a>
@@ -108,10 +108,12 @@
                 <li><a href="javascript:">男包</a></li>
             </ul>
         </div>
-        <div class="hd-shopCart">
-            <i class="icon icon-shopCart-btn"></i>
-            <a href="http://localhost:3000/src/goodShopCart.html">购物车</a>
-        </div>
+        <a href="/goodShopCart/">
+            <div class="hd-shopCart">
+                <i class="icon icon-shopCart-btn"></i>
+                <span>购物车</span>
+            </div>
+        </a>
     </div>
 </header>
 <nav class="hd-NavTab">
@@ -1535,7 +1537,7 @@
                     </div>
                 </div>
             </div>
-            <div style="position:relative"><a href="http://localhost:3000/src/goodShopCart.html" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center
+            <div style="position:relative"><a href="/goodShopCart/" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center
           "><i class="icon icon-shopcart-aside indexRight_cart "></i>购物车<em class="cart-goods-num" id="btnShowCartNum"
                                                                             style="display:none"></em></a></div>
             <div>
