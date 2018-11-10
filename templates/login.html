@@ -32,7 +32,7 @@
                 <form action="/login/" , method="post">
                     {% csrf_token %}
                     <div class="usernameBox">
-                        <input type="text" placeholder="网易邮箱账号" id="userName" class="ipt-username" name="account">
+                        <input type="text" placeholder="网易邮箱账号" id="userName" class="ipt-username" name="account"  required="required">
 
                         <i class="icon icon-username"></i>
                         <i class="cls-clear"></i>
@@ -40,7 +40,7 @@
                         <b style="color: red">{{ acountErr }}</b>
                     </div>
                     <div class="userpassBox">
-                        <input type="password" placeholder="密码" id="userPass" class="ipt-password" name="password">
+                        <input type="password" placeholder="密码" id="userPass" class="ipt-password" name="password"  required="required">
                         <i class="icon icon-password"></i>
                         <i class="cls-clear"></i>
                         <br>

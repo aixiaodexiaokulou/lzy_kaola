@@ -19,7 +19,7 @@ class SmallSildePic(models.Model):
     name = models.CharField(max_length=1000)
     discount_price = models.CharField(max_length=100)
     orig_price = models.CharField(max_length=100)
-
+# 商品
 class Goods(models.Model):
     small_src = models.CharField(max_length=100 ,null=True)
     middle_src = models.CharField(max_length=100,null=True)
@@ -37,3 +37,14 @@ class Goods(models.Model):
     country = models.CharField(max_length=100,null=True)
     self = models.BooleanField()
     cross1 = models.BooleanField()
+
+class Cart(models.Model):
+    # 用户(通过外键建立关系)
+    user = models.ForeignKey(User)
+    # 商品(通过外键建立关系)
+    goods = models.ForeignKey(Goods)
+    # 商品数量
+    number = models.IntegerField()
+    # 是否选中
+    isselect = models.BooleanField(default=True)
+

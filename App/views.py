@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from App.models import User, SildePic, SmallSildePic, Goods
+from App.models import User, SildePic, SmallSildePic, Goods, Cart
 
 
 # 主页
@@ -139,34 +139,43 @@ def checktel(request):
 def loginout(request):
     request.session.flush()
     return redirect('app:index')
+
+
 #
 def loginoutdetail(request):
     request.session.flush()
     return redirect('app:index')
 
+
 def loginoutcart(request):
     request.session.flush()
     return redirect('app:index')
 
-# 详情页
+
+# 商品详情页
 def goods(request, id):
     # goods = Goods.objects.all()[0:1]
     # 根据ID获取对应商品数据
     token = request.session.get('token')
     users = User.objects.filter(token=token)
-    goods = Goods.objects.filter(id=id)
-
+    goodsList = Goods.objects.filter(id=id)
 
     if users.exists():
         user = users.first()
+        # 获取购物车角标
+        carts = Cart.objects.filter(user=user)
+        count = 0
+        for cart in carts:
+            count += cart.number
         data = {
             'account': user.account,
-            'goods': goods,
+            'goodsList': goodsList,
+            'carts': carts,
+            'count': count,
         }
         return render(request, 'goodDetail.html', context=data)
-
     else:
-        return render(request, 'goodDetail.html')
+        return render(request, 'goodDetail.html', context={'goodsList': goodsList})
 
 
 # 购物车
@@ -176,10 +185,146 @@ def goodShopCart(request):
 
     if users.exists():
         user = users.first()
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+
         data = {
             'account': user.account,
+            'carts': carts,
         }
         return render(request, 'goodShopCart.html', context=data)
 
     else:
-        return render(request, 'goodShopCart.html')
+        return redirect('app:login')
+
+
+# 添加到购物车
+def addcart(request):
+    goodsid = request.GET.get('goodsid')
+    # print(goodsid)
+    token = request.session.get('token')
+
+    responseDate = {
+        'msg': '添加商品到购物车成功',
+        'status': 1,
+
+    }
+    if token:
+        user = User.objects.get(token=token)
+        goods = Goods.objects.get(pk=goodsid)
+
+        carts = Cart.objects.filter(user=user).filter(goods=goods)
+        if carts.exists():
+            cart = carts.first()
+            cart.number = cart.number + 1
+            cart.save()
+            responseDate['number'] = cart.number
+
+        else:
+            cart = Cart()
+            cart.user = user
+            cart.goods = goods
+            cart.number = 1
+            cart.save()
+            responseDate['number'] = cart.number
+
+        return JsonResponse(responseDate)
+    else:
+        responseDate['msg'] = '未登录 请登陆后操作'
+        responseDate['status'] = -1
+        return JsonResponse(responseDate)
+
+
+# 购物车内加
+def cartadd(request):
+    goodsid = request.GET.get('goodsid')
+    # print(goodsid)
+    token = request.session.get('token')
+    responseData = {
+        'msg': '商品数量加1',
+        'status': 1,
+    }
+    user = User.objects.get(token=token)
+    goods = Goods.objects.get(pk=goodsid)
+
+    carts = Cart.objects.filter(user=user).filter(goods=goods)
+    cart = carts.first()
+    cart.number = cart.number + 1
+    cart.save()
+    responseData['number'] = cart.number
+
+    return JsonResponse(responseData)
+
+
+# 购物车内减
+def cartsub(request):
+    goodsid = request.GET.get('goodsid')
+    # print(goodsid)
+    token = request.session.get('token')
+    responseData = {
+        'msg': '商品数量减1',
+        'status': 1,
+    }
+    user = User.objects.get(token=token)
+    goods = Goods.objects.get(pk=goodsid)
+
+    carts = Cart.objects.filter(user=user).filter(goods=goods)
+    cart = carts.first()
+    cart.number = cart.number - 1
+    cart.save()
+    responseData['number'] = cart.number
+
+    return JsonResponse(responseData)
+
+
+# 购物车删除
+def dropgood(request):
+    goodsid = request.GET.get('goodsid')
+    # print(goodsid)
+    token = request.session.get('token')
+    responseData = {
+        'msg': '删除一个商品',
+        'status': -1,
+    }
+    user = User.objects.get(token=token)
+    goods = Goods.objects.get(pk=goodsid)
+
+    carts = Cart.objects.filter(user=user).filter(goods=goods)
+    # cart = carts.first()
+    carts.delete()
+    responseData['msg'] = '删除成功'
+
+    return JsonResponse(responseData)
+
+# 购物车内单选中
+def oneselect(request):
+    cartid = request.GET.get('cartid')
+    # print(cartid)
+    cart = Cart.objects.get(pk=cartid)
+    cart.isselect = not cart.isselect
+    cart.save()
+
+    responseData = {
+        'msg': '选中状态改变',
+        'status': 1,
+        'isselect': cart.isselect
+    }
+
+    return JsonResponse(responseData)
+
+# 购物车内全选
+def allselect(request):
+    isselect = request.GET.get('isselect')
+    print(isselect)
+    if isselect == 'true':
+        isselect = True
+    else:
+        isselect = False
+
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    carts = Cart.objects.filter(user=user)
+    for cart in carts:
+        cart.isselect = isselect
+        cart.save()
+
+    return JsonResponse({'msg':'反选操作成功','status':1})

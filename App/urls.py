@@ -24,7 +24,21 @@ urlpatterns = [
 
     # 详情页
     url(r'^goods/(\d+)/$', views.goods, name='goods'),
+
+    url(r'^addcart/$', views.addcart, name='addcart'),  # 添加到购物车表Ajax
+
     # 购物车
     url(r'^goodShopCart/$', views.goodShopCart, name='goodShopCart'),
+
+    # 购物车内加
+    url(r'^cartadd/$', views.cartadd, name='cartadd'),
+    # 购物车内减
+    url(r'^cartsub/$', views.cartsub, name='cartsub'),
+    # 购物车内删除
+    url(r'^dropgood/$', views.dropgood, name='dropgood'),
+    # 购物车内单选中
+    url(r'^oneselect/$', views.oneselect, name='oneselect'),
+    # 购物车内全选
+    url(r'^allselect/$', views.allselect, name='allselect'),
 
 ]
