@@ -298,13 +298,19 @@ def dropgood(request):
 # 购物车内单选中
 def oneselect(request):
     cartid = request.GET.get('cartid')
+    checked = request.GET.get('checked')
     # print(cartid)
     cart = Cart.objects.get(pk=cartid)
-    cart.isselect = not cart.isselect
+    # cart.isselect = not cart.isselect
+    if checked == 'true':
+        cart.isselect = True
+    elif checked == 'false':
+        cart.isselect = False
+
     cart.save()
 
     responseData = {
-        'msg': '选中状态改变',
+        'msg': '单选状态改变',
         'status': 1,
         'isselect': cart.isselect
     }

@@ -376,6 +376,10 @@ $(function () {
     } else {
         $('.cart-exist').hide()
     }
+
+    // 调用总计
+    total()
+
     //购物车中加操作
     $('.increase-goods-num').click(function () {
         var goodsid = $(this).attr('goodsid')
@@ -413,54 +417,87 @@ $(function () {
         })
     })
 
-    // 购物车选中商品
+    // 单选
     $('.col1 .new-checkbox').click(function () {
         var cartid = $(this).attr('cartid')
-        console.log(cartid)
-        $.get('/oneselect/', {'cartid': cartid}, function (response) {
-            console.log(response)
-        })
+        var $that = $(this)
+        var checked = $(this).is(':checked')
 
+        $.get('/oneselect/', {'cartid': cartid, 'checked': checked}, function (response) {
+            var isselect = response.isselect
+
+            if (response.status == 1) {
+                // console.log(isselect)
+                if (isselect) {
+                    $that.attr('isselect', 'true')
+                } else {
+                    $that.attr('isselect', 'false')
+                }
+                total()
+            }
+        })
     })
+
+
+
     // 全选/取消全选
     $('.btn-selectall .btn-all-select').click(function () {
+        var $that = $(this)
         var isselect = $(this).attr('isselect')
+        // console.log(isselect)
         isselect = (isselect == 'false') ? true : false
         $(this).attr('isselect', isselect)
 
         console.log(isselect)
-        $.get('/allselect/',{'isselect':isselect},function (response) {
-            console.log(response)
+        $.get('/allselect/', {'isselect': isselect}, function (response) {
+            // console.log(response)
 
-            if (isselect){
-                $('.your-cart-goods').find('.new-checkbox').prop('checked',true)
-            } else{
+            if (isselect) {
+                $('.your-cart-goods').find('.new-checkbox').prop('checked', true)
+                $that.attr('isselect', 'false')
+
+            } else {
                 $('.your-cart-goods').find('.new-checkbox').removeAttr('checked')
+                $that.attr('isselect', 'false')
+
             }
+            // total()
         })
     })
 
-
-
-
-
-    // 算钱未完成
+    //算钱
     function total() {
         var sum = 0
 
         // 遍历操作
-        $('.goods').each(function () {
-            var $confirm = $(this).find('.confirm-wrapper')
-            var $content = $(this).find('.content-wrapper')
+        $('.goods-item').each(function () {
+            var $select = $(this).find('.new-checkbox').attr('isselect')
+            // console.log($select)
 
-            if ($confirm.find('.glyphicon-ok').length) {
-                var price = $content.find('.price').attr('price')
-                var num = $content.find('.num').attr('number')
-                sum += price * num
+            // 大写换小写
+            if ($select == 'true' || $select == 'True') {
+                $select = true
+            } else if ($select == 'false' || $select == 'False') {
+                $select = false
+            }
+            // console.log($select)
+            // console.log(typeof ($select))
+            if ($select) {
+                var $price = $(this).find('.new-price').html()
+                var $num = $(this).find('.this-goods-num').val()
+                var $tax = $(this).find('.current-goods-tax').html()
+                var $newprice = $price.substring(1,)
+
+                if ($tax != '本商品包税无需额外交税') {
+                    var $newtax = $tax.substring(0, 4) / 100 + 1
+                    sum += $newprice * $num * $newtax
+                } else {
+                    sum += $newprice * $num
+                }
             }
         })
-
-        // 显示
-        $('.bill .total b').html(parseInt(sum))
+        console.log(sum)
+        $('.total-goods-money').html(parseInt(sum))
     }
+
 })

@@ -104,7 +104,6 @@
 
         <div class="cart-exist" style="display:none">
             <div class="mycartBox">
-
                 <div class="mycart-short-info">
                     <div class="mycart-btn-allselect">
                         <input type="checkbox" name="name" value="" id="btn-allselect"
@@ -118,13 +117,12 @@
                     <div class="mycart-goods-cost centerX">金额（元）</div>
                     <div class="mycart-goods-behavior">操作</div>
                 </div>
-
                 <div class="mycart">
                     <div class="location-send">
                         <input type="checkbox" class="new-checkbox" id="this-location-1">
                         <label for="this-location-1"><h2>XX保税仓发货</h2></label>
                     </div>
-
+{#                    商品信息#}
                     <div class="goods">
                         <div class="show-goods">
                             <div class="current-active">
@@ -140,7 +138,9 @@
                                 {% for cart in carts %}
                                     <li class="goods-item">
                                         <div class="col col1">
-                                            <input type="checkbox" name="name" value="" class="new-checkbox" checked="checked" cartid="{{ cart.id }}" isselect="{{ cart.isselect }}">
+                                            <input type="checkbox" name="name" value="" class="new-checkbox"
+                                                   checked="checked" cartid="{{ cart.id }}"
+                                                   isselect="{{ cart.isselect }}">
                                         </div>
                                         <div class="col col2">
                                             <img src="{% static cart.goods.middle_src %}" alt="">
@@ -195,7 +195,8 @@
                 <div class="totalbox">
                     <div class="totalLeft">
                         <div class="btn-selectall">
-                            <input type="checkbox" id="btn-total-selectall" class="new-checkbox btn-all-select" isselect="false">
+                            <input type="checkbox" id="btn-total-selectall" class="new-checkbox btn-all-select"
+                                   isselect="false">
                             <label for="btn-total-selectall" class="label-all-select">全选</label>
                         </div>
                         <div class="btn-deleteSelect">
@@ -215,6 +216,12 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
             <div class="guess">
                 <div class="guess-wrap">
                     <div class="guess-tit currentPage-goods-tit">
