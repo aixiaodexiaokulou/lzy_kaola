@@ -388,6 +388,7 @@ $(function () {
         $.get('/cartadd/', {'goodsid': goodsid}, function (response) {
             console.log(response.number)
             $that.prev().val(response.number)
+            total()
         })
     })
 
@@ -401,6 +402,7 @@ $(function () {
             $.get('/cartsub/', {'goodsid': goodsid}, function (response) {
                 console.log(response.number)
                 $that.next().val(response.number)
+                total()
             })
         }
     })
@@ -435,7 +437,7 @@ $(function () {
             }
         })
     })
-    //全选2
+    //全选
     $('.btn-selectall .btn-all-select').click(function () {
         var isselect = $(this).attr('isselect')
 
@@ -461,40 +463,51 @@ $(function () {
         })
     })
 
-
     //算钱
     function total() {
         var sum = 0
-
+        var goodsnum = 0
+        var taxmoney = 0 //总需税费
+        var discountmoney = 0   //优惠金额
         // 遍历操作
         $('.goods-item').each(function () {
             var $select = $(this).find('.new-checkbox').attr('isselect')
-            // console.log($select)
-
             // 大写换小写
             if ($select == 'true' || $select == 'True') {
                 $select = true
             } else if ($select == 'false' || $select == 'False') {
                 $select = false
             }
-            // console.log($select)
-            // console.log(typeof ($select))
             if ($select) {
                 var $price = $(this).find('.new-price').html()
+                var $oldprice = $(this).find('.old-price').html()
                 var $num = $(this).find('.this-goods-num').val()
                 var $tax = $(this).find('.current-goods-tax').html()
                 var $newprice = $price.substring(1,)
-
+                var $newoldprice = $oldprice.substring(1,)
+                console.log(typeof($newprice))
                 if ($tax != '本商品包税无需额外交税') {
                     var $newtax = $tax.substring(0, 4) / 100 + 1
                     sum += $newprice * $num * $newtax
+                    discountmoney += ($newoldprice - $newprice) * $num * $newtax
+                    taxmoney += $newprice * $num * ($newtax - 1)
                 } else {
                     sum += $newprice * $num
+                    discountmoney += ($newoldprice - $newprice) * $num
+
                 }
+
+                goodsnum += parseInt($(this).find('.this-goods-num').val())
             }
+
         })
-        console.log(sum)
+        // console.log(discountmoney)
         $('.total-goods-money').html(parseInt(sum))
+        $('.selected-goods-num').html(goodsnum)
+        $('.total-goods-saved').html(parseInt(discountmoney))
+        $('.total-goods-tax').html(parseInt(taxmoney))
     }
+
+    //删除选中商品(待完成)
 
 })
