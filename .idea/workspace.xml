@@ -64,17 +64,18 @@
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.68" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="18" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="App_cart" value="23" />
+          <entry key="App_cart" value="26" />
           <entry key="App_gooddetail" value="11" />
           <entry key="App_goods" value="19" />
           <entry key="App_sildepic" value="10" />
@@ -95,7 +96,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="19" />
-          <entry key="Database Element" value="79" />
+          <entry key="Database Element" value="82" />
           <entry key="HTML" value="41" />
           <entry key="Image" value="50" />
           <entry key="JSON" value="1" />
@@ -110,18 +111,18 @@
         <counts>
           <entry key="cell" value="33" />
           <entry key="css" value="955" />
-          <entry key="html" value="2678" />
-          <entry key="js" value="3402" />
-          <entry key="py" value="3398" />
+          <entry key="html" value="2679" />
+          <entry key="js" value="3773" />
+          <entry key="py" value="3467" />
           <entry key="sql" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="955" />
-          <entry key="HTML" value="2678" />
-          <entry key="JavaScript" value="3402" />
-          <entry key="Python" value="3398" />
+          <entry key="HTML" value="2679" />
+          <entry key="JavaScript" value="3773" />
+          <entry key="Python" value="3467" />
           <entry key="Scratch" value="67" />
         </counts>
       </usages-collector>
@@ -141,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+            <state relative-caret-position="580">
+              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -150,8 +151,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/goodShopCart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+            <state relative-caret-position="120">
+              <caret line="140" column="107" selection-start-line="140" selection-start-column="95" selection-end-line="140" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -159,8 +160,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-160">
-              <caret line="307" column="29" selection-start-line="307" selection-start-column="29" selection-end-line="307" selection-end-column="29" />
+            <state relative-caret-position="301">
+              <caret line="332" column="32" lean-forward="true" selection-start-line="332" selection-start-column="32" selection-end-line="332" selection-end-column="32" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#3153#3524#0" />
@@ -181,12 +182,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/goodShopCart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="450" column="29" lean-forward="true" selection-start-line="450" selection-start-column="29" selection-end-line="450" selection-end-column="29" />
+            <state relative-caret-position="335">
+              <caret line="459" column="10" lean-forward="true" selection-start-line="459" selection-start-column="10" selection-end-line="459" selection-end-column="10" />
               <folding>
                 <element signature="e#18796#18897#0" />
                 <element signature="e#19030#19312#0" />
                 <element signature="e#19374#19752#0" />
+                <element signature="e#21780#22913#0" />
               </folding>
             </state>
           </provider>
@@ -413,14 +415,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33978495" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3376344" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3299611" />
-      <window_info anchor="right" id="Database" order="4" weight="0.14708172" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.14708172" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://bf62eda6-da6c-4758-aea1-167b5ce43c6a/schema/MyNetEasyKaoLa/table/App_cart">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -619,24 +614,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/goodShopCart.html">
+    <entry file="file://$PROJECT_DIR$/App/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+        <state relative-caret-position="580">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/App/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+    <entry file="das://bf62eda6-da6c-4758-aea1-167b5ce43c6a/schema/MyNetEasyKaoLa/table/App_cart">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/App/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="307" column="29" selection-start-line="307" selection-start-column="29" selection-end-line="307" selection-end-column="29" />
+        <state relative-caret-position="301">
+          <caret line="332" column="32" lean-forward="true" selection-start-line="332" selection-start-column="32" selection-end-line="332" selection-end-column="32" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#3153#3524#0" />
@@ -653,14 +648,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/goodShopCart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="140" column="107" selection-start-line="140" selection-start-column="95" selection-end-line="140" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/goodShopCart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="450" column="29" lean-forward="true" selection-start-line="450" selection-start-column="29" selection-end-line="450" selection-end-column="29" />
+        <state relative-caret-position="335">
+          <caret line="459" column="10" lean-forward="true" selection-start-line="459" selection-start-column="10" selection-end-line="459" selection-end-column="10" />
           <folding>
             <element signature="e#18796#18897#0" />
             <element signature="e#19030#19312#0" />
             <element signature="e#19374#19752#0" />
+            <element signature="e#21780#22913#0" />
           </folding>
         </state>
       </provider>

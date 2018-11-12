@@ -320,7 +320,7 @@ def oneselect(request):
 # 购物车内全选
 def allselect(request):
     isselect = request.GET.get('isselect')
-    print(isselect)
+
     if isselect == 'true':
         isselect = True
     else:

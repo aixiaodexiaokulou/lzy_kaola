@@ -422,10 +422,8 @@ $(function () {
         var cartid = $(this).attr('cartid')
         var $that = $(this)
         var checked = $(this).is(':checked')
-
         $.get('/oneselect/', {'cartid': cartid, 'checked': checked}, function (response) {
             var isselect = response.isselect
-
             if (response.status == 1) {
                 // console.log(isselect)
                 if (isselect) {
@@ -437,33 +435,32 @@ $(function () {
             }
         })
     })
-
-
-
-    // 全选/取消全选
+    //全选2
     $('.btn-selectall .btn-all-select').click(function () {
-        var $that = $(this)
         var isselect = $(this).attr('isselect')
-        // console.log(isselect)
+
         isselect = (isselect == 'false') ? true : false
         $(this).attr('isselect', isselect)
-
         console.log(isselect)
         $.get('/allselect/', {'isselect': isselect}, function (response) {
-            // console.log(response)
+            console.log(response)
+            if (response.status == 1) {
+                $('.goods-item').each(function () {
+                    console.log(isselect)
+                    if (isselect) {
+                        $(this).find('.new-checkbox').attr('isselect', true)
+                        $(this).find('.new-checkbox').prop('checked', true)
 
-            if (isselect) {
-                $('.your-cart-goods').find('.new-checkbox').prop('checked', true)
-                $that.attr('isselect', 'false')
-
-            } else {
-                $('.your-cart-goods').find('.new-checkbox').removeAttr('checked')
-                $that.attr('isselect', 'false')
-
+                    } else {
+                        $(this).find('.new-checkbox').attr('isselect', false)
+                        $(this).find('.new-checkbox').removeAttr('checked')
+                    }
+                })
+                total()
             }
-            // total()
         })
     })
+
 
     //算钱
     function total() {
