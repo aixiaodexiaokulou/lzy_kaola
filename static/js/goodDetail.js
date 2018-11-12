@@ -381,9 +381,9 @@ $(function () {
     //购物车操作
 
     // 有商品显示购物车角标
-     $('.cart-plus em').each(function () {
+    $('.cart-plus em').each(function () {
         var num = parseInt($(this).html())
-        if (num){   // 有数据，即有添加购物车
+        if (num) {   // 有数据，即有添加购物车
             $(this).show()
         }
     })
@@ -395,7 +395,13 @@ $(function () {
         num += 1
         $(this).prev().val(num)
     })
-
+    //加数量
+    $('.decrease-num').click(function () {
+        var num = parseInt($(this).next().val())
+        // console.log(num)
+        num -= 1
+        $(this).next().val(num)
+    })
 
 
     //加购物车操作
@@ -404,7 +410,7 @@ $(function () {
         // var $that = $(this)
         // console.log(goodsid)
         var goodsnum = $('.current-goods-num').val()
-        $.get('/addcart/',{'goodsid':goodsid,'goodsnum':goodsnum},function (response) {
+        $.get('/addcart/', {'goodsid': goodsid, 'goodsnum': goodsnum}, function (response) {
             console.log(response)
             if (response.status == -1) {     // 未登录
                 window.open('/login/', target = '_self')
@@ -412,7 +418,7 @@ $(function () {
             else if (response.status == 1) {        // 表示添加成功
                 $('.cart-plus em').show().html(response.number)
                 var adr = '/' + 'goods/' + goodsid + '/'
-                window.open(adr, target='_self')
+                window.open(adr, target = '_self')
             }
         })
     })

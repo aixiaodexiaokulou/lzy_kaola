@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4ca99d8-c879-42d6-94f5-fadf72bb0f41" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/goodDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/goodDetail.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,8 +109,8 @@
           <entry key="cell" value="33" />
           <entry key="css" value="955" />
           <entry key="html" value="2679" />
-          <entry key="js" value="4421" />
-          <entry key="py" value="3513" />
+          <entry key="js" value="4431" />
+          <entry key="py" value="3533" />
           <entry key="sql" value="34" />
         </counts>
       </usages-collector>
@@ -119,8 +118,8 @@
         <counts>
           <entry key="CSS" value="955" />
           <entry key="HTML" value="2679" />
-          <entry key="JavaScript" value="4421" />
-          <entry key="Python" value="3513" />
+          <entry key="JavaScript" value="4431" />
+          <entry key="Python" value="3533" />
           <entry key="Scratch" value="67" />
         </counts>
       </usages-collector>
@@ -146,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="204" column="23" selection-start-line="204" selection-start-column="23" selection-end-line="204" selection-end-column="23" />
+            <state relative-caret-position="86">
+              <caret line="208" column="20" lean-forward="true" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#3153#3524#0" />
@@ -170,17 +169,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/goodDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="268" column="75" lean-forward="true" selection-start-line="268" selection-start-column="57" selection-end-line="268" selection-end-column="75" />
+            <state relative-caret-position="195">
+              <caret line="267" column="55" selection-start-line="267" selection-start-column="47" selection-end-line="267" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/goodDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="405" column="52" lean-forward="true" selection-start-line="405" selection-start-column="52" selection-end-line="405" selection-end-column="52" />
+            <state relative-caret-position="86">
+              <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -257,8 +256,8 @@
         <option value="$PROJECT_DIR$/App/urls.py" />
         <option value="$PROJECT_DIR$/static/js/goodShopCart.js" />
         <option value="$PROJECT_DIR$/templates/goodShopCart.html" />
-        <option value="$PROJECT_DIR$/static/js/goodDetail.js" />
         <option value="$PROJECT_DIR$/App/views.py" />
+        <option value="$PROJECT_DIR$/static/js/goodDetail.js" />
       </list>
     </option>
   </component>
@@ -390,7 +389,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="25" width="1327" height="590" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.31284046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -627,24 +625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/goodDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="405" column="52" lean-forward="true" selection-start-line="405" selection-start-column="52" selection-end-line="405" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/goodDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="268" column="75" lean-forward="true" selection-start-line="268" selection-start-column="57" selection-end-line="268" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="204" column="23" selection-start-line="204" selection-start-column="23" selection-end-line="204" selection-end-column="23" />
+        <state relative-caret-position="86">
+          <caret line="208" column="20" lean-forward="true" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#3153#3524#0" />
@@ -657,6 +641,20 @@
             <element signature="e#6349#6822#0" />
             <element signature="e#6859#7332#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/goodDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="267" column="55" selection-start-line="267" selection-start-column="47" selection-end-line="267" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/goodDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
         </state>
       </provider>
     </entry>
