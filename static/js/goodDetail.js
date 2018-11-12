@@ -202,27 +202,27 @@ $(function () {
     })
 
     //改变当前商品数量
-    $('.computed-component').find('button').click(function () {
-        let that = this;
-        let currentNum = $(this).siblings('.current-goods-num').val();
-        // 如果当前input text 的值不为1  也就是说当前所在位置的商品数量>1
-        if (currentNum != 1) {
-            $(this).index() ? $(this).siblings('.current-goods-num').val(++currentNum) :
-                $(this).siblings('.current-goods-num').val(--currentNum);
-            // computePay(that);
-
-        } else {
-            // console.log($(this).index());
-            if (!$(this).index()) {
-                $(this).css('cursor', 'not-allowed').prop('disabled', 'disabled');
-                $(this).addClass('default-button');
-            } else {
-                $(this).siblings('.current-goods-num').val(++currentNum);
-                $('.decrease-num').removeClass('default-button');
-                $(this).parent().children(':button').removeAttr('disabled').css('cursor', 'pointer');
-            }
-        }
-    })
+    // $('.computed-component').find('button').click(function () {
+    //     let that = this;
+    //     let currentNum = $(this).siblings('.current-goods-num').val();
+    //     // 如果当前input text 的值不为1  也就是说当前所在位置的商品数量>1
+    //     if (currentNum != 1) {
+    //         $(this).index() ? $(this).siblings('.current-goods-num').val(++currentNum) :
+    //             $(this).siblings('.current-goods-num').val(--currentNum);
+    //         // computePay(that);
+    //
+    //     } else {
+    //         // console.log($(this).index());
+    //         if (!$(this).index()) {
+    //             $(this).css('cursor', 'not-allowed').prop('disabled', 'disabled');
+    //             $(this).addClass('default-button');
+    //         } else {
+    //             $(this).siblings('.current-goods-num').val(++currentNum);
+    //             $('.decrease-num').removeClass('default-button');
+    //             $(this).parent().children(':button').removeAttr('disabled').css('cursor', 'pointer');
+    //         }
+    //     }
+    // })
 
     //收藏
     $('#btnCollect').click(function () {
@@ -388,13 +388,23 @@ $(function () {
         }
     })
 
+    //加数量
+    $('.increase-num').click(function () {
+        var num = parseInt($(this).prev().val())
+        // console.log(num)
+        num += 1
+        $(this).prev().val(num)
+    })
 
-    //加操作
+
+
+    //加购物车操作
     $('#btnAddCart').click(function () {
         var goodsid = $(this).attr('goodsid')
         // var $that = $(this)
-        console.log(goodsid)
-        $.get('/addcart/',{'goodsid':goodsid},function (response) {
+        // console.log(goodsid)
+        var goodsnum = $('.current-goods-num').val()
+        $.get('/addcart/',{'goodsid':goodsid,'goodsnum':goodsnum},function (response) {
             console.log(response)
             if (response.status == -1) {     // 未登录
                 window.open('/login/', target = '_self')

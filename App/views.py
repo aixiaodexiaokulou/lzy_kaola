@@ -201,6 +201,9 @@ def goodShopCart(request):
 def addcart(request):
     goodsid = request.GET.get('goodsid')
     # print(goodsid)
+    goodsnum = request.GET.get('goodsnum')
+    goodsnum1 = int(goodsnum)
+    print(type(goodsnum1))
     token = request.session.get('token')
 
     responseDate = {
@@ -215,7 +218,7 @@ def addcart(request):
         carts = Cart.objects.filter(user=user).filter(goods=goods)
         if carts.exists():
             cart = carts.first()
-            cart.number = cart.number + 1
+            cart.number = cart.number + goodsnum1
             cart.save()
             responseDate['number'] = cart.number
 
