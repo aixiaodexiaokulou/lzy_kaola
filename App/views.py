@@ -7,7 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from App.models import User, SildePic, SmallSildePic, Goods, Cart
+from App.models import User, SildePic, SmallSildePic, Goods, Cart, Order, OrderGoods
 
 
 # 主页
@@ -337,3 +337,43 @@ def allselect(request):
         cart.save()
 
     return JsonResponse({'msg':'反选操作成功','status':1})
+
+# 订单
+def generateorder(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+
+    # 生成订单
+    order = Order()
+    order.user = user
+    order.identifier = str(int(time.time())) + str(random.randrange(10000,100000))
+    order.save()
+
+    # 订单商品
+    carts = Cart.objects.filter(user=user).filter(isselect=True)
+    for cart in carts:
+        orderGoods = OrderGoods()
+        orderGoods.order = order
+        orderGoods.goods = cart.goods
+        orderGoods.number = cart.number
+        orderGoods.save()
+
+        # 移除购物车商品
+        cart.delete()
+
+    responseData = {
+        'msg':'订单生成成功',
+        'status':1,
+        'identifier': order.identifier
+    }
+
+    return JsonResponse(responseData)
+
+# 订单详情
+def orderinfo(request,identifier):
+    # 一个订单可以有多个商品
+    order = Order.objects.get(identifier=identifier)
+
+
+
+    return render(request,'orderinfo.html',context={'order':order})

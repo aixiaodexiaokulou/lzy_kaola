@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4ca99d8-c879-42d6-94f5-fadf72bb0f41" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/js/goodDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/goodDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bf62eda6-da6c-4758-aea1-167b5ce43c6a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bf62eda6-da6c-4758-aea1-167b5ce43c6a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/App/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/goodShopCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/goodShopCart.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,30 +79,31 @@
           <entry key="App_cart" value="28" />
           <entry key="App_gooddetail" value="11" />
           <entry key="App_goods" value="20" />
+          <entry key="App_order" value="3" />
           <entry key="App_sildepic" value="10" />
           <entry key="App_smallsildepic" value="3" />
           <entry key="App_user" value="12" />
           <entry key="auth_user" value="1" />
-          <entry key="css" value="19" />
-          <entry key="html" value="42" />
+          <entry key="css" value="26" />
+          <entry key="html" value="47" />
           <entry key="jpg" value="41" />
-          <entry key="js" value="41" />
+          <entry key="js" value="47" />
           <entry key="json" value="1" />
           <entry key="png" value="9" />
-          <entry key="py" value="21" />
+          <entry key="py" value="25" />
           <entry key="scss" value="1" />
           <entry key="sql" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="19" />
-          <entry key="Database Element" value="85" />
-          <entry key="HTML" value="42" />
+          <entry key="CSS" value="26" />
+          <entry key="Database Element" value="88" />
+          <entry key="HTML" value="47" />
           <entry key="Image" value="50" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="41" />
-          <entry key="Python" value="21" />
+          <entry key="JavaScript" value="47" />
+          <entry key="Python" value="25" />
           <entry key="SCSS" value="1" />
           <entry key="SQL" value="6" />
           <entry key="Scratch" value="5" />
@@ -107,95 +112,133 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cell" value="33" />
-          <entry key="css" value="955" />
-          <entry key="html" value="2679" />
-          <entry key="js" value="4431" />
-          <entry key="py" value="3533" />
+          <entry key="css" value="1002" />
+          <entry key="html" value="3030" />
+          <entry key="js" value="4565" />
+          <entry key="py" value="4392" />
           <entry key="sql" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="955" />
-          <entry key="HTML" value="2679" />
-          <entry key="JavaScript" value="4431" />
-          <entry key="Python" value="3533" />
+          <entry key="CSS" value="1002" />
+          <entry key="HTML" value="3030" />
+          <entry key="JavaScript" value="4565" />
+          <entry key="Python" value="4392" />
           <entry key="Scratch" value="67" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="40" selection-start-line="40" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/App/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="208" column="20" lean-forward="true" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <element signature="e#3153#3524#0" />
-                <element signature="e#3562#3918#0" />
-                <element signature="e#3955#4011#0" />
-                <element signature="e#4049#4105#0" />
-                <element signature="e#4139#4195#0" />
-                <element signature="e#4234#4927#0" />
-                <element signature="e#4967#5373#0" />
-                <element signature="e#6349#6822#0" />
-                <element signature="e#6859#7332#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/goodDetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="267" column="55" selection-start-line="267" selection-start-column="47" selection-end-line="267" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/goodDetail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.52062255">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="76">
+                  <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="78" column="10" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="10" />
+                  <folding>
+                    <marker date="1541994711797" expanded="true" signature="1831:1836" ph="..." />
+                    <marker date="1541994711797" expanded="true" signature="2189:2194" ph="..." />
+                    <marker date="1541994711797" expanded="true" signature="2189:2336" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/App/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="215">
+                  <caret line="373" column="17" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+                  <folding>
+                    <element signature="e#0#14#0" expanded="true" />
+                    <element signature="e#3153#3524#0" />
+                    <element signature="e#3562#3918#0" />
+                    <element signature="e#3955#4011#0" />
+                    <element signature="e#4049#4105#0" />
+                    <element signature="e#4139#4195#0" />
+                    <element signature="e#4234#4927#0" />
+                    <element signature="e#4967#5373#0" />
+                    <element signature="e#5411#6420#0" />
+                    <element signature="e#6457#6930#0" />
+                    <element signature="e#6967#7440#0" />
+                    <element signature="e#7478#7915#0" />
+                    <element signature="e#7955#8407#0" />
+                    <element signature="e#8446#8827#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/templates/orderinfo.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+                  <folding>
+                    <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/js/orderinfo.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/static/css/orderinfo.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="293">
+                  <caret line="578" column="14" selection-start-line="578" selection-start-column="14" selection-end-line="578" selection-end-column="14" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main-Wrap</find>
       <find>account</find>
       <find>username</find>
       <find>errorBorder</find>
@@ -225,6 +268,7 @@
       <find>each</find>
       <find>money</find>
       <find>goods-item</find>
+      <find>pay</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,13 +295,18 @@
         <option value="$PROJECT_DIR$/static/js/signin.js" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/goodDetail.html" />
-        <option value="$PROJECT_DIR$/App/models.py" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/App/urls.py" />
-        <option value="$PROJECT_DIR$/static/js/goodShopCart.js" />
         <option value="$PROJECT_DIR$/templates/goodShopCart.html" />
-        <option value="$PROJECT_DIR$/App/views.py" />
         <option value="$PROJECT_DIR$/static/js/goodDetail.js" />
+        <option value="$PROJECT_DIR$/App/models.py" />
+        <option value="$PROJECT_DIR$/static/js/goodShopCart.js" />
+        <option value="$PROJECT_DIR$/App/urls.py" />
+        <option value="$PROJECT_DIR$/templates/order.html" />
+        <option value="$PROJECT_DIR$/static/js/order.js" />
+        <option value="$PROJECT_DIR$/App/views.py" />
+        <option value="$PROJECT_DIR$/static/js/orderinfo.js" />
+        <option value="$PROJECT_DIR$/static/css/orderinfo.css" />
+        <option value="$PROJECT_DIR$/templates/orderinfo.html" />
       </list>
     </option>
   </component>
@@ -285,25 +334,66 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+              <item name="App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mykaola" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mykaola" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="goodD&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/js/goodDetail.js&#10;Det&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/goodDetail.html&#10;de&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/js/goodDetail.js&#10;re&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/register.html&#10;login&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/login.html&#10;goodc&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/css/goodShopCart.css&#10;mo&#9;FILE&#9;file:///home/study/Desktop/mykaola/App/models.py" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/css/goodShopCart.css&#10;good&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/css/goodShopCart.css&#10;car&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/goodShopCart.html&#10;url&#9;FILE&#9;file:///home/study/Desktop/mykaola/App/urls.py&#10;ca&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/js/goodShopCart.js&#10;goodD&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/js/goodDetail.js&#10;Det&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/goodDetail.html&#10;de&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/js/goodDetail.js&#10;re&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/register.html&#10;login&#9;FILE&#9;file:///home/study/Desktop/mykaola/templates/login.html&#10;goodc&#9;FILE&#9;file:///home/study/Desktop/mykaola/static/css/goodShopCart.css&#10;mo&#9;FILE&#9;file:///home/study/Desktop/mykaola/App/models.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python1809lzyAXF" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AXF07班模板&amp;09老师/Python1809AXF" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/css" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/static/js" />
-      <recent name="$PROJECT_DIR$/static/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -389,8 +479,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="25" width="1327" height="590" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.31284046" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1922179" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -404,14 +495,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3376344" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4100877" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3299611" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14708172" />
+      <window_info anchor="right" id="Database" order="4" weight="0.255" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,27 +512,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nijp097_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nil4k46_800_800(1).jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nikwc20_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nikls85_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nik5o6_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id1/imq4k7dr86_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nil4k46_800_800.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/forshow/id2/it2nil4k46_800_800 (1).jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -568,20 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/goodShopCart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="290" column="17" selection-start-line="290" selection-start-column="17" selection-end-line="290" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="40" selection-start-line="40" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://bf62eda6-da6c-4758-aea1-167b5ce43c6a/schema/MyNetEasyKaoLa/table/App_goods">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -596,54 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/goodShopCart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="221" lean-forward="true" selection-start-line="221" selection-end-line="221" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/goodShopCart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="512" column="2" lean-forward="true" selection-start-line="512" selection-start-column="2" selection-end-line="512" selection-end-column="2" />
-          <folding>
-            <element signature="e#18796#18897#0" />
-            <element signature="e#19030#19312#0" />
-            <element signature="e#19374#19752#0" />
-            <element signature="e#19811#20130#0" />
-            <element signature="e#20190#20760#0" />
-            <element signature="e#20808#21376#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="208" column="20" lean-forward="true" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <element signature="e#3153#3524#0" />
-            <element signature="e#3562#3918#0" />
-            <element signature="e#3955#4011#0" />
-            <element signature="e#4049#4105#0" />
-            <element signature="e#4139#4195#0" />
-            <element signature="e#4234#4927#0" />
-            <element signature="e#4967#5373#0" />
-            <element signature="e#6349#6822#0" />
-            <element signature="e#6859#7332#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/goodDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -653,8 +661,128 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/goodDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="398" column="29" selection-start-line="398" selection-start-column="29" selection-end-line="398" selection-end-column="29" />
+        <state relative-caret-position="206">
+          <caret line="404" lean-forward="true" selection-start-line="404" selection-end-line="404" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://bf62eda6-da6c-4758-aea1-167b5ce43c6a/schema/MyNetEasyKaoLa/table/App_order">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/goodShopCart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="517" column="63" selection-start-line="517" selection-start-column="53" selection-end-line="517" selection-end-column="63" />
+          <folding>
+            <element signature="e#18796#18897#0" />
+            <element signature="e#19030#19332#0" />
+            <element signature="e#19394#19796#0" />
+            <element signature="e#19855#20174#0" />
+            <element signature="e#20234#20802#0" />
+            <element signature="e#20871#21762#0" />
+            <element signature="e#21795#23550#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/order.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/order.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="373" column="17" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#3153#3524#0" />
+            <element signature="e#3562#3918#0" />
+            <element signature="e#3955#4011#0" />
+            <element signature="e#4049#4105#0" />
+            <element signature="e#4139#4195#0" />
+            <element signature="e#4234#4927#0" />
+            <element signature="e#4967#5373#0" />
+            <element signature="e#5411#6420#0" />
+            <element signature="e#6457#6930#0" />
+            <element signature="e#6967#7440#0" />
+            <element signature="e#7478#7915#0" />
+            <element signature="e#7955#8407#0" />
+            <element signature="e#8446#8827#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/goodShopCart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="139" column="62" lean-forward="true" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="78" column="10" selection-start-line="78" selection-start-column="4" selection-end-line="78" selection-end-column="10" />
+          <folding>
+            <marker date="1541994711797" expanded="true" signature="1831:1836" ph="..." />
+            <marker date="1541994711797" expanded="true" signature="2189:2194" ph="..." />
+            <marker date="1541994711797" expanded="true" signature="2189:2336" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/goodShopCart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="295" column="47" selection-end-line="572" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/orderinfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/orderinfo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="578" column="14" selection-start-line="578" selection-start-column="14" selection-end-line="578" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/orderinfo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

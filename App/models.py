@@ -19,6 +19,7 @@ class SmallSildePic(models.Model):
     name = models.CharField(max_length=1000)
     discount_price = models.CharField(max_length=100)
     orig_price = models.CharField(max_length=100)
+
 # 商品
 class Goods(models.Model):
     small_src = models.CharField(max_length=100 ,null=True)
@@ -38,6 +39,7 @@ class Goods(models.Model):
     self = models.BooleanField()
     cross1 = models.BooleanField()
 
+# 购物车
 class Cart(models.Model):
     # 用户(通过外键建立关系)
     user = models.ForeignKey(User)
@@ -47,4 +49,32 @@ class Cart(models.Model):
     number = models.IntegerField()
     # 是否选中
     isselect = models.BooleanField(default=True)
+
+# 订单
+class Order(models.Model):
+    user = models.ForeignKey(User)
+    # 创建时间
+    createtime = models.DateTimeField(auto_now_add=True)
+
+    # 订单状态
+    # -1 过期
+    # 1 未付款
+    # 2 已付款,未发货
+    # 3 已发货,快递
+    # 4 已签收,未评价
+    # 5 已评价
+    # 6 退款....
+    status = models.IntegerField(default=1)
+
+    # 订单号
+    identifier = models.CharField(max_length=256)
+
+# 订单商品
+class OrderGoods(models.Model):
+    # 订单
+    order = models.ForeignKey(Order)
+    # 商品
+    goods = models.ForeignKey(Goods)
+    # 个数
+    number = models.IntegerField(default=1)
 

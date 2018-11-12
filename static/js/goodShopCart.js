@@ -485,7 +485,6 @@ $(function () {
                 var $tax = $(this).find('.current-goods-tax').html()
                 var $newprice = $price.substring(1,)
                 var $newoldprice = $oldprice.substring(1,)
-                console.log(typeof($newprice))
                 if ($tax != '本商品包税无需额外交税') {
                     var $newtax = $tax.substring(0, 4) / 100 + 1
                     sum += $newprice * $num * $newtax
@@ -509,5 +508,17 @@ $(function () {
     }
 
     //删除选中商品(待完成)
+
+
+    // 下单
+    $('#btn-total-pay').click(function () {
+        $.get('/generateorder/',function (response) {
+            console.log(response)
+            if (response.status == 1){
+                window.open('/orderinfo/' + response.identifier + '/', target='_self')
+            }
+        })
+    })
+
 
 })

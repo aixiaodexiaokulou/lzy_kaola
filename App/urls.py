@@ -41,4 +41,10 @@ urlpatterns = [
     # 购物车内全选
     url(r'^allselect/$', views.allselect, name='allselect'),
 
+    # 下单
+    url(r'^generateorder/$', views.generateorder, name='generateorder'),
+    # 订单详情
+    url(r'^orderinfo/(\d+)/$', views.orderinfo, name='orderinfo'),
+
+
 ]
