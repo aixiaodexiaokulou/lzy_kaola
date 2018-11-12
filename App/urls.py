@@ -46,5 +46,10 @@ urlpatterns = [
     # 订单详情
     url(r'^orderinfo/(\d+)/$', views.orderinfo, name='orderinfo'),
 
+    # 支付通知url 支付完成后的通知
+    url(r'^notifyurl/$', views.notifyurl, name='notifyurl'),
+
+    # 支付完成后的跳转
+    url(r'^returnurl/$', views.returnurl, name='returnurl'),
 
 ]

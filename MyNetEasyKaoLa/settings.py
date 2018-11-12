@@ -130,6 +130,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+
 # 黑名单
 BLOCKED_IPS = [
     '10.20.154.2',
@@ -139,3 +140,6 @@ BLOCKED_IPS = [
 
 # 上传目录
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static.upload')
+
+# 支付宝相关key
+ALIPAY_ROOT = os.path.join(BASE_DIR, 'static/key')

@@ -67,12 +67,12 @@ def register(request):
             # 密码加密
             user.password = generate_password(password)
             user.tel = tel
-            user.token = uuid.uuid5(uuid.uuid4(), 'register')
+            user.token = str(uuid.uuid5(uuid.uuid4(), 'register'))
             user.save()
 
             response = redirect('app:index')
             # 状态保持
-            response.set_cookie('token', user.token)
+            request.session['token'] = user.token
             return response
         except Exception as e:
             return HttpResponse('注册失败')
@@ -377,3 +377,13 @@ def orderinfo(request,identifier):
 
 
     return render(request,'orderinfo.html',context={'order':order})
+
+# 支付通知url 支付完成后的通知
+def notifyurl(request):
+    print('xxx 订单支付成功,待发货')
+    return JsonResponse({'msg':'success'})
+
+# 支付完成后的跳转
+def returnurl(request):
+    print('xxx 订单支付成功,进行页面跳转')
+    return HttpResponse('进行页面跳转')
