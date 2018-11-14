@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5db(r8=*oul7x1%kw_9i6$&fhux&=u8-_lc081k3h3y1e+a&ed'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'MyNetEasyKaoLa.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'MyNetEasyKaoLa',
+        'NAME': 'Mykaola',
         'USER': 'root',
         'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        'HOST': '47.106.118.150',
         'POSt': 3306,
     }
 }

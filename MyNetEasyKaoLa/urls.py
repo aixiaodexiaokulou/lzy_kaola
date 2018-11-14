@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('App.urls', namespace='app')),
+    url(r'^mykaola/', include('App.urls')),
 
 ]
